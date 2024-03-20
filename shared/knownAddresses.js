@@ -1,3 +1,5 @@
+//addresses must be lowercase//
+
 const KNOWN_CONTRACTS = { 
   '0xb81e9c5f9644dec9e5e3cac86b4461a222072302': 'VeChain Node',
   '0xe28ce32d637eb93cbda105f87fbb829e9ef8540b': 'VeChain Auction',

@@ -157,11 +157,11 @@
   bottom: 0;
   border-top: 1px solid #3e4050;
   width: 100%;
-  background: #182024;
+  background: #061e2b;
   z-index: 2147483600;
   cursor: pointer; }
   .BottomBar:hover {
-    background: #1a2327; }
+    background: #0a3547; }
     .BottomBar:hover svg > circle {
       fill: silver; }
   .BottomBar svg {
