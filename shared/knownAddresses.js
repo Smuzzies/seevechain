@@ -11,7 +11,7 @@ const KNOWN_CONTRACTS = {
     short: 'KaY',
     long: 'KaY - Not Part of VeChain',
   },
-  '0x83F158bbC757CE2fF61Ff5Ff119eCa7ad687a306': {
+  '0x83f158bbc757ce2ff61ff5ff119eca7ad687a306': {
     short: 'vechain.energy',
     long: 'VTHO Swap Manager',
   },
