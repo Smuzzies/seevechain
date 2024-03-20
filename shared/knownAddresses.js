@@ -10,7 +10,11 @@ const KNOWN_CONTRACTS = {
   '0xf57a7cdee288ecc97dd90b56778acb724a1a1d59': {
     short: 'KaY',
     long: 'KaY - Not Part of VeChain',
-  },  
+  },
+  '0x83F158bbC757CE2fF61Ff5Ff119eCa7ad687a306': {
+    short: 'vechain.energy',
+    long: 'VTHO Swap Manager',
+  },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
     long: 'DNV',
@@ -1129,7 +1133,6 @@ const KNOWN_CONTRACTS = {
     short: 'VeSea',
     long: 'VeSea NFT: UkiDawgs',
    },
-  '0x83F158bbC757CE2fF61Ff5Ff119eCa7ad687a306': 'vechain.energy',
 }
 
     
