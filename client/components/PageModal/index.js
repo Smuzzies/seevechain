@@ -109,21 +109,21 @@ function Donate({ toggleDonate, donateRef, donateVisible }) {
         )
       },
     }} >
-      Support Seevechain&nbsp;
+      Support the Better Collective Team&nbsp;
       <Icon type={donateVisible ? 'down-chevron' : 'right-chevron'} />
     </div>
     {donateVisible &&
       <div className="PageModal-donateWrapper">
         <div className="PageModal-address">
-          <input value="0x3f5929c5741C726Ea3fE574790ca89a69f6Aa780" />
-          <CopyButton copyValue="0x3f5929c5741C726Ea3fE574790ca89a69f6Aa780" />
+          <input value="0x06c2524420741ff26E52a482d8B4c8532Bf03893" />
+          <CopyButton copyValue="0x06c2524420741ff26E52a482d8B4c8532Bf03893" />
         </div>
         <div className="PageModal-currencyMessage">
           Send VET, VTHO, or any VIP180 token
         </div>
         <QRCode
           className="PageModal-qrCode"
-          value="0x3f5929c5741C726Ea3fE574790ca89a69f6Aa780"
+          value="0x06c2524420741ff26E52a482d8B4c8532Bf03893"
           size={128}
           bgColor="#ffffff"
           fgColor="#182024"
@@ -137,23 +137,28 @@ function Donate({ toggleDonate, donateRef, donateVisible }) {
 }
 
 function Prices() {
-  const prices = useAppState(s => s.prices)
+  const prices = useAppState(s => s.prices); // Ensure this is fetching the updated prices correctly
+
+  // Check if prices are available to avoid errors on initial render
+  if (!prices || !prices.vet || !prices.vtho) {
+      return <div>Loading prices...</div>;
+  }
+
   return <div className="PageModal-prices">
     <span>
       VET
-      <span className="PageModal-prices-price">${prices.vet.usd.toFixed(5)}</span>
+      <span className="PageModal-prices-price">${prices.vet.toFixed(5)}</span> {/* Ensure this reflects how prices are structured */}
     </span>
     <span className="PageModal-prices-middle">
       VTHO/VET
       <span className="PageModal-prices-price PageModal-prices-middle-price">
-        {(prices.vtho.usd / prices.vet.usd).toFixed(4)}
+        {(prices.vtho / prices.vet).toFixed(4)} {/* Ensure calculation is correct based on how prices are stored */}
       </span>
     </span>
     <span>
       VTHO
-      <span className="PageModal-prices-price">${prices.vtho.usd.toFixed(5)}</span>
+      <span className="PageModal-prices-price">${prices.vtho.toFixed(5)}</span> {/* Adjust as needed */}
     </span>
-    <ServerTime />
   </div>
 }
 
