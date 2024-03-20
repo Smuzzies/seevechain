@@ -63946,7 +63946,7 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x6fd65c8ecafebbb505ab74f2e27025058bddc75d', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeTower - VeRooms'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x2f0586faa4b51a678cf5d0f27ce414f3f6d08517', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x2f0586faa4b51a678cf5d0f27ce414f3f6d08517', {
   "short": 'VeSea',
   "long": 'VeSea NFT: BFFC Eagles'
 }), '0xdce5a78fe9cbba559c73a83ee40891b8a09516c2', {
@@ -63964,6 +63964,9 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xb1e19aeaa5da5aba4b5591e548b5b6505c08909e', {
   "short": 'VeSea',
   "long": 'VeSea NFT: UkiDawgs'
+}), '0xafe1d7d4ac69c2f31dfde6dd31f3df955ddec2a3', {
+  "short": 'Gresini',
+  "long": 'Gresini Card'
 }));
 var TOKEN_CONTRACTS = {
   '0x8fcddbb322b18d8bdaec9243e9f4c6eb8901e566': '3DAbles Token',

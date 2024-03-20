@@ -1135,6 +1135,10 @@ const KNOWN_CONTRACTS = {
     short: 'VeSea',
     long: 'VeSea NFT: UkiDawgs',
    },
+   '0xafe1d7d4ac69c2f31dfde6dd31f3df955ddec2a3': {
+    short: 'Gresini',
+    long: 'Gresini Card',
+   },
 }
 
     
