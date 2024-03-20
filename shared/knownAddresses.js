@@ -1183,7 +1183,7 @@ const TOKEN_CONTRACTS = {
   '0x0bd802635eb9ceb3fcbe60470d2857b86841aab6': 'VEX Token',
   '0x28c61940bdcf5a67158d00657e8c3989e112eb38': 'GEMS Token',
   '0x99763494a7b545f983ee9fe02a3b5441c7ef1396': 'MVG Token',
-  '0x9AF004570f2a301D99F2cE4554E564951eE48e3c': 'SHT Token',
+  '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token',
 }
 
 const KNOWN_ADDRESSES = {
@@ -1253,7 +1253,7 @@ const KNOWN_ADDRESSES = {
   '0x17b6254c7324438b469a01ce80b67dd7c4d5eef8': 'Plair ICO',
   '0x48e8dace6a1976d4912f8b5dcc3f45651c3d4b73': 'Safe Haven Boost',
   '0x27942b0d71919c4aa81b7ae6ba951150faef5ae6': 'VIP-191 Sponsor',
-  '0xFF5ba88a17b2E16D23FF6647E9052E937AcB1406': 'Coinbase (Hot Wallet 4)',
+  '0xff5ba88a17b2e16d23ff6647e9052e937acb1406': 'Coinbase (Hot Wallet 4)',
 }
 
 function getKnownContract(address, shortOrLong) {
