@@ -1128,7 +1128,10 @@ const KNOWN_CONTRACTS = {
   '0xb1e19aeaa5da5aba4b5591e548b5b6505c08909e': {
     short: 'VeSea',
     long: 'VeSea NFT: UkiDawgs',
-   }
+   },
+  '0x83F158bbC757CE2fF61Ff5Ff119eCa7ad687a306': {
+    short: 'vechain.energy',
+    long: 'VTHO Swap Manager',
 }
 
     
