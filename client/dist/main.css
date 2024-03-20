@@ -1,3 +1,4 @@
+
 .BurnTxsAndClausesCharts-avgBurn {
   margin-top: 10px;
   text-align: center; }
@@ -40,7 +41,7 @@
     align-items: center;
     border-radius: 50%;
     background: #3ff9dc;
-    background: linear-gradient(0deg, rgba(100, 249, 63, 0.1) 33%, #3ff9dc 100%);
+    background: linear-gradient(0deg, rgba(63, 249, 220, 0.1) 33%, #3ff9dc 100%);
     animation: spin .8s linear 0s infinite;
     z-index: 99992;
     position: absolute; }
@@ -154,13 +155,13 @@
 .BottomBar {
   position: absolute;
   bottom: 0;
-  border-top: 0px solid #3e4050;
+  border-top: 1px solid #3e4050;
   width: 100%;
-  background: #0d2359;
+  background: #182024;
   z-index: 2147483600;
   cursor: pointer; }
   .BottomBar:hover {
-    background: #2348a6; }
+    background: #1a2327; }
     .BottomBar:hover svg > circle {
       fill: silver; }
   .BottomBar svg {
