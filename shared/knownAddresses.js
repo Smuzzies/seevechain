@@ -13,10 +13,6 @@ const KNOWN_CONTRACTS = {
     short: 'KaY',
     long: 'KaY - Not Part of VeChain',
   },
-  '0x83f158bbc757ce2ff61ff5ff119eca7ad687a306': {
-    short: 'vechain.energy',
-    long: 'VTHO Swap Manager',
-  },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
     long: 'DNV',
@@ -493,6 +489,10 @@ const KNOWN_CONTRACTS = {
   '0x8639b5f52f0093789f2e0f5bd2d6b9f58e8b0efb': {
     short: 'WorldOfV',
     long: 'Genesis Staking',
+  },
+    '0x6b273fffae3b682ba9e62ada2a052ade9f2fc99c': {
+      short: 'WorldOfV',
+      long: 'WoV Genesis Cards Staking',
   },
   '0xfabce34bb0b1174f1e0127d69bb705c60c35e587': {
     short: 'WorldOfV',
@@ -1011,6 +1011,10 @@ const KNOWN_CONTRACTS = {
     short: 'VeSea',
     long: 'VeSea NFT: MinoMob',
    },
+   '0xcb831e98a3ae13b4a124ef8d0088edfee3de0c89': {
+    short: 'VeSea',
+    long: 'VeSea NFT: MinoMob Legendary',
+   },
   '0xb757fc0906f08714315d2abd4b4f077521a21e34': {
     short: 'VeSea',
     long: 'VeSea NFT: VVAR DOGS',
@@ -1139,6 +1143,10 @@ const KNOWN_CONTRACTS = {
     short: 'Gresini',
     long: 'Gresini Card',
    },
+   '0x83f158bbc757ce2ff61ff5ff119eca7ad687a306': {
+    short: 'vtho.exchange',
+    long: 'vtho.exchange',
+  },
 }
 
     
