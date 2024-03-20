@@ -1,6 +1,8 @@
 # [seevechain](https://seevechain.com/)
 
 A realtime VeChain visualizer
+![image](https://github.com/Smuzzies/seevechain/assets/110495122/408b40a1-357b-41d0-a059-01e415111165)
+
 
 ## Run locally
 
