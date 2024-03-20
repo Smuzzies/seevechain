@@ -1132,7 +1132,7 @@ const KNOWN_CONTRACTS = {
   '0x83F158bbC757CE2fF61Ff5Ff119eCa7ad687a306': {
     short: 'vechain.energy',
     long: 'VTHO Swap Manager',
-  },
+   },
 }
 
     
