@@ -1327,6 +1327,7 @@ async function getVetNameForContract(address) {
     short: tld,
     long: name
   }
+  PRETTY_KNOWN_CONTRACTS[address] = name
 
   // return the newly fetched data
   return KNOWN_CONTRACTS[address]
