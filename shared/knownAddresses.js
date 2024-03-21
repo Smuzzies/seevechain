@@ -1258,10 +1258,8 @@ const KNOWN_ADDRESSES = {
 
 function getKnownContract(address, shortOrLong) {
   if (!KNOWN_CONTRACTS[address]) {
-    // suggestion:
-    // less intrusive action would be fetching for the next time, not blocking first time display
-    // otherwise we could move the getKnownContract to be async in all places
-    void getVetNameForContract(address)
+    getVetNameForAddress(address)
+      .catch(() => { /* ignore */ })
     return
   }
 
@@ -1279,16 +1277,28 @@ function getLongKnownContract(address) {
 }
 
 
+function getKnownAddress (address) {
+  if(KNOWN_ADDRESSES[address]) {
+    return KNOWN_ADDRESSES[address]
+  }
+
+  getVetNameForAddress(address)
+    .catch(() => { /* ignore */ })
+}
+
 const fetchedVetAddresses = new Set()
-async function getVetNameForContract(address) {
+async function getVetNameForAddress(address) {
   // fetch every address only once
-  if (fetchedVetAddresses.has(address) || KNOWN_CONTRACTS[address]) { return }
+  if (fetchedVetAddresses.has(address)) { return }
   fetchedVetAddresses.add(address)
 
   // read name for address
   try {
     const [name] = await fetch('https://api.vechain.energy/v1/call/main', {
       method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
       body: JSON.stringify({
         "clauses": [
           {
@@ -1311,26 +1321,23 @@ async function getVetNameForContract(address) {
         ]
       })
     }).then(res => res.json())
+    if (!name) { return }
+
+    // extract tld from name, for exmaple vtho.swap.energy.vet => energy.vet
+    const tld = name.split('.').slice(-2).join('.')
+
+    // store in results KNOWN_CONTRACTS
+    KNOWN_ADDRESSES[address] = name
+    KNOWN_CONTRACTS[address] = {
+      short: tld,
+      long: name
+    }
   }
 
   // just ignore errors, we can re-fetch on next start
   catch {
     return
   }
-  if (!name) { return }
-
-  // extract tld from name, for exmaple vtho.swap.energy.vet => energy.vet
-  const tld = name.split('.').slice(-2).join('.')
-
-  // store in results KNOWN_CONTRACTS
-  KNOWN_CONTRACTS[address] = {
-    short: tld,
-    long: name
-  }
-  PRETTY_KNOWN_CONTRACTS[address] = name
-
-  // return the newly fetched data
-  return KNOWN_CONTRACTS[address]
 }
 
 const PRETTY_KNOWN_CONTRACTS = {}
@@ -1344,6 +1351,7 @@ for (let key in KNOWN_CONTRACTS) {
 module.exports = {
   getShortKnownContract,
   getLongKnownContract,
+  getKnownAddress,
   KNOWN_CONTRACTS,
   KNOWN_ADDRESSES,
   TOKEN_CONTRACTS,

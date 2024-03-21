@@ -8,7 +8,7 @@ import numeral from 'numeral'
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
 import numberWithCommas from 'lib/numberWithCommas'
-import { getShortKnownContract, KNOWN_ADDRESSES, TOKEN_CONTRACTS } from '../../../shared/knownAddresses'
+import { getShortKnownContract, getKnownAddress, TOKEN_CONTRACTS } from '../../../shared/knownAddresses'
 import lightenDarkenColor from 'lib/lightenDarkenColor'
 import { LIGHT_RANGE, BOX_SHADOWS } from 'lib/colors'
 import { highDing, lowDing } from 'lib/sounds'
@@ -153,11 +153,11 @@ function TransferTransaction({ clauses, transaction }) {
   let toLabel
   let fromExchangeLabel
   recipients.forEach(address => {
-    if (KNOWN_ADDRESSES[address] && !toExchangeLabel) toExchangeLabel = KNOWN_ADDRESSES[address]
+    if (getKnownAddress(address) && !toExchangeLabel) toExchangeLabel = getKnownAddress(address)
     else if (!toLabel) toLabel = formatAddress(address)
   })
   senders.forEach(address => {
-    if (!fromExchangeLabel && KNOWN_ADDRESSES[address]) fromExchangeLabel = KNOWN_ADDRESSES[address]
+    if (!fromExchangeLabel && getKnownAddress(address)) fromExchangeLabel = getKnownAddress(address)
   })
   let direction
   let label
