@@ -63029,7 +63029,16 @@ function create$1(createState) {
 /***/ (function(module, exports) {
 
 var _KNOWN_CONTRACTS;
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw new Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw new Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
@@ -63047,10 +63056,6 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
   '0xf57a7cdee288ecc97dd90b56778acb724a1a1d59': {
     "short": 'KaY',
     "long": 'KaY - Not Part of VeChain'
-  },
-  '0x83f158bbc757ce2ff61ff5ff119eca7ad687a306': {
-    "short": 'vechain.energy',
-    "long": 'VTHO Swap Manager'
   },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     "short": 'ToolChain Partners',
@@ -63487,6 +63492,9 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x8639b5f52f0093789f2e0f5bd2d6b9f58e8b0efb', {
   "short": 'WorldOfV',
   "long": 'Genesis Staking'
+}), '0x6b273fffae3b682ba9e62ada2a052ade9f2fc99c', {
+  "short": 'WorldOfV',
+  "long": 'WoV Genesis Cards Staking'
 }), '0xfabce34bb0b1174f1e0127d69bb705c60c35e587', {
   "short": 'WorldOfV',
   "long": 'Special Card Staking'
@@ -63508,10 +63516,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x602d006ed9da40144df3a8f3fc707d29cb651ed5', {
   "short": 'WorldOfV',
   "long": 'VeHash Staking'
-}), '0xf4a6040c695b815b70713deff0793db1d33eb6b3', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xf4a6040c695b815b70713deff0793db1d33eb6b3', {
   "short": 'WorldOfV',
   "long": 'VeHash Staking 3'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x489f014285a0c45e5c82013d5c3f3b3e1274889e', {
+}), '0x489f014285a0c45e5c82013d5c3f3b3e1274889e', {
   "short": 'WorldOfV',
   "long": 'Shredderz Staking'
 }), "0x489f014285a0c45e5c82013d5c3f3b3e1274889e", {
@@ -63538,10 +63546,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xf5e2d450881d8c3d466dd4ff4de8838c275bbc3c', {
   "short": 'WorldOfV',
   "long": 'Domination Staking'
-}), '0x8bb4a3ec153c0aa1ed1c51788b1d49dd68c79b30', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x8bb4a3ec153c0aa1ed1c51788b1d49dd68c79b30', {
   "short": 'WorldOfV',
   "long": 'Corgi Staking'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xdd567517b958b6501a6388b4fa8cd2fd72ab72c4', {
+}), '0xdd567517b958b6501a6388b4fa8cd2fd72ab72c4', {
   "short": 'WorldOfV',
   "long": 'VeKongs Staking'
 }), '0xe827213802fcaf4b776fa0adbde8da7fdd5f4b91', {
@@ -63568,10 +63576,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x31c71f4cd01fddd940a46dafd72d3291f52040a4', {
   "short": 'VPunks',
   "long": 'VPunks NFT Auction'
-}), '0xdf71fd02fa65767b2b61a6346d7998e25987731a', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xdf71fd02fa65767b2b61a6346d7998e25987731a', {
   "short": 'VPunks',
   "long": 'VPunks VPU Staking'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x3473c5282057d7beda96c1ce0fe708e890764009', {
+}), '0x3473c5282057d7beda96c1ce0fe708e890764009', {
   "short": 'ExoWorlds',
   "long": 'ExoWorlds NFT'
 }), '0xb2f12edde215e39186cc7653aeb551c8cf1f77e3', {
@@ -63598,10 +63606,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x6c693abe7183e4f1c93c89721ce2c5bb06408eab', {
   "short": 'Black VeMarket',
   "long": 'Warbands Staking'
-}), '0x3824f4288279089b22712afd60cb1d48e5b2c8cb', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x3824f4288279089b22712afd60cb1d48e5b2c8cb', {
   "short": 'Black VeMarket',
   "long": 'VeBudz Staking'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xd56340abb721b7c89c6ca3835efc490dfd66f9ae', {
+}), '0xd56340abb721b7c89c6ca3835efc490dfd66f9ae', {
   "short": 'Black VeMarket',
   "long": 'VeShawties NFTs'
 }), '0xc22d8ca65bb9ee4a8b64406f3b0405cc1ebeec4e', {
@@ -63625,7 +63633,7 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xd4310196a56c5193811ae418b8729d82b34abdcc', {
   "short": 'Black VeMarket',
   "long": 'Dragon of Singapura Weapons NFT'
-}), '0x5a45edc6311017e6b12ebfb32c28a8d36ecf7686', 'Avery Dennison'), '0xd948e6cf79ab34b716350db4aee33cf0031cf7a1', 'XGG Black Tea'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x3805c62f463f34b2f913bb09115aaa9460794d7c', 'WOV Clock Auction Genesis'), '0x2980f7a9bec00ee6ffee21e5fbac5e104578bf13', 'Wall of Vame'), '0x49ba5e15899142ee2b192769e4abbc2cf13bfd6c', 'Voteos'), '0x955b48a46698b2b8330d75dc88ae5b95cd7ff9f4', {
+}), '0x5a45edc6311017e6b12ebfb32c28a8d36ecf7686', 'Avery Dennison'), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xd948e6cf79ab34b716350db4aee33cf0031cf7a1', 'XGG Black Tea'), '0x3805c62f463f34b2f913bb09115aaa9460794d7c', 'WOV Clock Auction Genesis'), '0x2980f7a9bec00ee6ffee21e5fbac5e104578bf13', 'Wall of Vame'), '0x49ba5e15899142ee2b192769e4abbc2cf13bfd6c', 'Voteos'), '0x955b48a46698b2b8330d75dc88ae5b95cd7ff9f4', {
   "short": 'Satoshi Dice',
   "long": 'Yggdrasil'
 }), '0xd6fdbeb6d0fbc690dabd352cf93b2f8d782a46b5', {
@@ -63643,10 +63651,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xd850350d060ab629363386206df6486dcfa6ed68', {
   "short": 'Arbs',
   "long": 'Arb Contract D'
-}), '0xbfc4649a50b8fc1fb75706eb28f8b6c5b3978012', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xbfc4649a50b8fc1fb75706eb28f8b6c5b3978012', {
   "short": 'Arbs',
   "long": 'Arb Contract E'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x9aa9f6472a5b415dbb7dd36dfb773e09b1369288', {
+}), '0x9aa9f6472a5b415dbb7dd36dfb773e09b1369288', {
   "short": 'Independent NFTs',
   "long": 'Vesitors NFT'
 }), '0x47cce813c986b4d982a192bf7d6831f4beaccbc0', {
@@ -63673,10 +63681,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xf639b215679d2411e0e2b25191dcc0ac38f1d798', {
   "short": 'Llama Digital Studios',
   "long": 'Gods Boss Battling'
-}), '0x54a343c40a6ee31b27ca98e4c814d5bd02065b20', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x54a343c40a6ee31b27ca98e4c814d5bd02065b20', {
   "short": 'Llama Digital Studios',
   "long": 'Gates of Hell1'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xf606d79a1e962b1291d1dcf1f7226ecfbd8c63fc', {
+}), '0xf606d79a1e962b1291d1dcf1f7226ecfbd8c63fc', {
   "short": 'Llama Digital Studios',
   "long": 'Gates of Hell2'
 }), '0xbdf2b45bd428bba31c46b8d8d1f50615ee0e1416', {
@@ -63703,10 +63711,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x122209e8f89cf2c1f126c3195419b9e4ee9c81ae', {
   "short": 'VeSea',
   "long": 'Paper Community Canvas 2022'
-}), '0x242035f42c59119b9a22d4270506c07fb792e55c', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x242035f42c59119b9a22d4270506c07fb792e55c', {
   "short": 'VeSea',
   "long": 'VeSea Profiles'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xa76a73bcba9b4822f31e9827aaab7953c95a66ba', {
+}), '0xa76a73bcba9b4822f31e9827aaab7953c95a66ba', {
   "short": 'VeSea',
   "long": 'VeSea Messenger'
 }), '0xdab185ca52b70e087ec0990ad59c612c3d7aab14', {
@@ -63733,10 +63741,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x148442103eeadfaf8cffd593db80dcdeadda71c9', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeKings'
-}), '0x588f2b0d4cbea48deb34c3d401cb995046edda81', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x588f2b0d4cbea48deb34c3d401cb995046edda81', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeGhosts'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x997c61cd02b5f2c8826ebcaf26080c650cabdda2', {
+}), '0x997c61cd02b5f2c8826ebcaf26080c650cabdda2', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Honorary VeKings'
 }), '0x9992501f1ef16d4b900e9d316cf468959b8f9bcd', {
@@ -63763,10 +63771,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xb12d1d640f56173ef3a47e5e1a1fde96ba96ce14', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Mad Ⓥ-Apes Fusion'
-}), '0x60deca6baceb6258c8d718f9987acb17176f7f24', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x60deca6baceb6258c8d718f9987acb17176f7f24', {
   "short": 'VeSea',
   "long": 'VeSea NFT: universe'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x436f0a9b45e85eb2f749aa67d3393c649ef4dff2', {
+}), '0x436f0a9b45e85eb2f749aa67d3393c649ef4dff2', {
   "short": 'VeSea',
   "long": 'VeSea NFT: AstroVETs'
 }), '0x01c10830feef88258e7a1ca998009ac19f7f087e', {
@@ -63793,10 +63801,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x15e2f18feade6ccb990956050bf0c2990445cace', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeGnomes'
-}), '0x207577649f08c87de98e9981712fc9aece07df79', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x207577649f08c87de98e9981712fc9aece07df79', {
   "short": 'VeSea',
   "long": 'VeSea NFT: uniⓋerse Expanse'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x0403745444204d1a0218cecbfe70b2ea42d654a6', {
+}), '0x0403745444204d1a0218cecbfe70b2ea42d654a6', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Guardians (Old)'
 }), '0x7f2445324b9aaaede83a0bde18a1d55caea8c18f', {
@@ -63823,10 +63831,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x78d4ba28c151501fa3f68927ea96304cab89b6f0', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VFoxes'
-}), '0xd393c0dcccae49248862b462404b63a8546a888a', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xd393c0dcccae49248862b462404b63a8546a888a', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Guardians Leaders'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x850a2457975fd411f03a513c6f94cd7d378e7ec1', {
+}), '0x850a2457975fd411f03a513c6f94cd7d378e7ec1', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Ukraine'
 }), '0xfd5e344798ceb51afd910fafae9768e4d093a725', {
@@ -63853,10 +63861,10 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x1d971ac972f671c19d1be00e4fbf3118d3861851', {
   "short": 'VeSea',
   "long": 'VeSea NFT: ForestNation - Guardians'
-}), '0x3759080b28604fd2851c215da71539bd8d5242ef', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x3759080b28604fd2851c215da71539bd8d5242ef', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Kickback Koalas'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x3fdf191152684b417f4a55264158c2eab97a81b3', {
+}), '0x3fdf191152684b417f4a55264158c2eab97a81b3', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VFox - ORIGINS'
 }), '0xf647e7b4fe7e0dc7ceddd038c6c004cc53163ca9', {
@@ -63871,6 +63879,9 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xf4d82631be350c37d92ee816c2bd4d5adf9e6493', {
   "short": 'VeSea',
   "long": 'VeSea NFT: MinoMob'
+}), '0xcb831e98a3ae13b4a124ef8d0088edfee3de0c89', {
+  "short": 'VeSea',
+  "long": 'VeSea NFT: MinoMob Legendary'
 }), '0xb757fc0906f08714315d2abd4b4f077521a21e34', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VVAR DOGS'
@@ -63880,13 +63891,13 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x8d831724414739846045e7bc07522058ff5f67d8', {
   "short": 'VeSea',
   "long": 'VeSea NFT: SSV'
-}), '0xbcbf39013da096c97f0dc913f7ac1cdc42b9a721', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xbcbf39013da096c97f0dc913f7ac1cdc42b9a721', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Universal Inventory'
 }), '0x017d182c60e4f3c469156208b9f30a7fb80db214', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Baby Yeet Crusaders X'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xc17d84d2d19b45653abefed0b9678fcdbfc1b0b0', {
+}), '0xc17d84d2d19b45653abefed0b9678fcdbfc1b0b0', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Ukiyoe Yokai Masks'
 }), '0x428f6e43adc7649fe79f3a4341f0780cab059ffb', {
@@ -63910,13 +63921,13 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xcb99479e30136d86f9d8a8e9a79a4ecc75e36066', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeCowboys'
-}), '0x4eb966763294a77be85d1a1a56b7e15f59f45dbe', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x4eb966763294a77be85d1a1a56b7e15f59f45dbe', {
   "short": 'VeSea',
   "long": 'VeSea NFT: SSV Spectres'
 }), '0x4d4664aed6f645fb3defbbd668b2a4842c029187', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Goatz Club'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xc766ddd21f14862ef426f15bfb28573fdad8bc51', {
+}), '0xc766ddd21f14862ef426f15bfb28573fdad8bc51', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Mino Mob Multiverse'
 }), '0xe7af95411f611fbaf39bc91c17ca6179661a032e', {
@@ -63940,13 +63951,13 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0x8c810f79900d2b69f7043c7ff447f2eb3084606a', {
   "short": 'VeSea',
   "long": 'VeSea NFT: Nonfungible Bookclub'
-}), '0xfb3b2f8b4f8aae9e7a24ba0bcbb6a49d344f2ef3', {
+}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0xfb3b2f8b4f8aae9e7a24ba0bcbb6a49d344f2ef3', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VFA - HiVe POP 2023'
 }), '0x6fd65c8ecafebbb505ab74f2e27025058bddc75d', {
   "short": 'VeSea',
   "long": 'VeSea NFT: VeTower - VeRooms'
-}), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_KNOWN_CONTRACTS, '0x2f0586faa4b51a678cf5d0f27ce414f3f6d08517', {
+}), '0x2f0586faa4b51a678cf5d0f27ce414f3f6d08517', {
   "short": 'VeSea',
   "long": 'VeSea NFT: BFFC Eagles'
 }), '0xdce5a78fe9cbba559c73a83ee40891b8a09516c2', {
@@ -63967,6 +63978,9 @@ var KNOWN_CONTRACTS = (_KNOWN_CONTRACTS = {
 }), '0xafe1d7d4ac69c2f31dfde6dd31f3df955ddec2a3', {
   "short": 'Gresini',
   "long": 'Gresini Card'
+}), '0x83f158bbc757ce2ff61ff5ff119eca7ad687a306', {
+  "short": 'vtho.exchange',
+  "long": 'vtho.exchange'
 }));
 var TOKEN_CONTRACTS = {
   '0x8fcddbb322b18d8bdaec9243e9f4c6eb8901e566': '3DAbles Token',
@@ -64001,12 +64015,13 @@ var TOKEN_CONTRACTS = {
   '0x0bd802635eb9ceb3fcbe60470d2857b86841aab6': 'VEX Token',
   '0x28c61940bdcf5a67158d00657e8c3989e112eb38': 'GEMS Token',
   '0x99763494a7b545f983ee9fe02a3b5441c7ef1396': 'MVG Token',
-  '0x9AF004570f2a301D99F2cE4554E564951eE48e3c': 'SHT Token'
+  '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token'
 };
 var KNOWN_ADDRESSES = {
   '0xa4adafaef9ec07bc4dc6de146934c7119341ee25': 'Binance',
   '0xd0d9cd5aa98efcaeee2e065ddb8538fa977bc8eb': 'Binance Cold',
   '0x1263c741069eda8056534661256079d485e111eb': 'Binance Warm',
+  '0x44bc93a8d3cefa5a6721723a2f8d2e4f7d480ba0': 'Binance (In/Out Wallet)',
   '0xd7dd13a54755cb68859eec0cac24144aafb8c881': 'Huobi',
   '0xfe64e37dfc7d64743d9351260fa99073c840452b': 'Binance US',
   '0xb73554767983dc5aaeac2b948e407f57e8e9dea1': 'Bittrex',
@@ -64070,10 +64085,19 @@ var KNOWN_ADDRESSES = {
   '0x17b6254c7324438b469a01ce80b67dd7c4d5eef8': 'Plair ICO',
   '0x48e8dace6a1976d4912f8b5dcc3f45651c3d4b73': 'Safe Haven Boost',
   '0x27942b0d71919c4aa81b7ae6ba951150faef5ae6': 'VIP-191 Sponsor',
-  '0xFF5ba88a17b2E16D23FF6647E9052E937AcB1406': 'Coinbase (Hot Wallet 4)'
+  '0xb0c224a96655ba8d51f35f98068f5fc12f930946': 'Coinbase (Hot Wallet 1)',
+  '0xda894a5dc94d64efd5b518a7bd567740c4617fcc': 'Coinbase (Hot Wallet 2)',
+  '0x65d0dc1b845a9eb4baabbf28e3c5b4de2e19e51c': 'Coinbase (Hot Wallet 3)',
+  '0xff5ba88a17b2e16d23ff6647e9052e937acb1406': 'Coinbase (Hot Wallet 4)',
+  '0xbf6ba25d7d3e28153549196cd6361fca5e40d635': 'Coinbase (Hot Wallet 5)',
+  '0xf9cb626c6f611ae0255cbb452ae70a9c68fb6d89': 'Coinbase (Hot Wallet 6)',
+  '0xd1815e7a26609a0c07233582e7309c5ae8b25b6f': 'Coinbase (Hot Wallet 7)'
 };
 function getKnownContract(address, shortOrLong) {
-  if (!KNOWN_CONTRACTS[address]) return;
+  if (!KNOWN_CONTRACTS[address]) {
+    getVetNameForAddress(address)["catch"](function () {/* ignore */});
+    return;
+  }
   return typeof KNOWN_CONTRACTS[address] === 'string' ? KNOWN_CONTRACTS[address] : KNOWN_CONTRACTS[address][shortOrLong];
 }
 function getShortKnownContract(address) {
@@ -64081,6 +64105,93 @@ function getShortKnownContract(address) {
 }
 function getLongKnownContract(address) {
   return getKnownContract(address, 'long');
+}
+function getKnownAddress(address) {
+  if (KNOWN_ADDRESSES[address]) {
+    return KNOWN_ADDRESSES[address];
+  }
+  getVetNameForAddress(address)["catch"](function () {/* ignore */});
+}
+var fetchedVetAddresses = new Set();
+function getVetNameForAddress(_x) {
+  return _getVetNameForAddress.apply(this, arguments);
+}
+function _getVetNameForAddress() {
+  _getVetNameForAddress = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(address) {
+    var _yield$fetch$then, _yield$fetch$then2, name, tld;
+    return _regeneratorRuntime().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          if (!fetchedVetAddresses.has(address)) {
+            _context.next = 2;
+            break;
+          }
+          return _context.abrupt("return");
+        case 2:
+          fetchedVetAddresses.add(address);
+
+          // read name for address
+          _context.prev = 3;
+          _context.next = 6;
+          return fetch('https://api.vechain.energy/v1/call/main', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+              "clauses": [{
+                "to": "0xA11413086e163e41901bb81fdc5617c975Fa5a1A",
+                "abi": {
+                  "inputs": [{
+                    "internalType": "address[]",
+                    "name": "addresses",
+                    "type": "address[]"
+                  }],
+                  "name": "getNames",
+                  "outputs": [{
+                    "internalType": "string[]",
+                    "name": "names",
+                    "type": "string[]"
+                  }],
+                  "stateMutability": "view",
+                  "type": "function"
+                },
+                "args": [[address]]
+              }]
+            })
+          }).then(function (res) {
+            return res.json();
+          });
+        case 6:
+          _yield$fetch$then = _context.sent;
+          _yield$fetch$then2 = _slicedToArray(_yield$fetch$then, 1);
+          name = _yield$fetch$then2[0];
+          if (name) {
+            _context.next = 11;
+            break;
+          }
+          return _context.abrupt("return");
+        case 11:
+          // extract tld from name, for exmaple vtho.swap.energy.vet => energy.vet
+          tld = name.split('.').slice(-2).join('.'); // store in results KNOWN_CONTRACTS
+          KNOWN_ADDRESSES[address] = name;
+          KNOWN_CONTRACTS[address] = {
+            "short": tld,
+            "long": name
+          };
+          _context.next = 19;
+          break;
+        case 16:
+          _context.prev = 16;
+          _context.t0 = _context["catch"](3);
+          return _context.abrupt("return");
+        case 19:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[3, 16]]);
+  }));
+  return _getVetNameForAddress.apply(this, arguments);
 }
 var PRETTY_KNOWN_CONTRACTS = {};
 for (var key in KNOWN_CONTRACTS) {
@@ -64090,6 +64201,7 @@ for (var key in KNOWN_CONTRACTS) {
 module.exports = {
   getShortKnownContract: getShortKnownContract,
   getLongKnownContract: getLongKnownContract,
+  getKnownAddress: getKnownAddress,
   KNOWN_CONTRACTS: KNOWN_CONTRACTS,
   KNOWN_ADDRESSES: KNOWN_ADDRESSES,
   TOKEN_CONTRACTS: TOKEN_CONTRACTS,
@@ -65363,10 +65475,10 @@ function TransferTransaction(_ref4) {
   var toLabel;
   var fromExchangeLabel;
   recipients.forEach(function (address) {
-    if (_shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["KNOWN_ADDRESSES"][address] && !toExchangeLabel) toExchangeLabel = _shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["KNOWN_ADDRESSES"][address];else if (!toLabel) toLabel = formatAddress(address);
+    if (Object(_shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["getKnownAddress"])(address) && !toExchangeLabel) toExchangeLabel = Object(_shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["getKnownAddress"])(address);else if (!toLabel) toLabel = formatAddress(address);
   });
   senders.forEach(function (address) {
-    if (!fromExchangeLabel && _shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["KNOWN_ADDRESSES"][address]) fromExchangeLabel = _shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["KNOWN_ADDRESSES"][address];
+    if (!fromExchangeLabel && Object(_shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["getKnownAddress"])(address)) fromExchangeLabel = Object(_shared_knownAddresses__WEBPACK_IMPORTED_MODULE_8__["getKnownAddress"])(address);
   });
   var direction;
   var label;

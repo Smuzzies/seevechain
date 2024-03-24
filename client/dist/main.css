@@ -155,13 +155,13 @@
 .BottomBar {
   position: absolute;
   bottom: 0;
-  border-top: 1px solid #3e4050;
+  border-top: 2px solid #6aeb00;
   width: 100%;
-  background: #061e2b;
+  background: #000a41;
   z-index: 2147483600;
   cursor: pointer; }
   .BottomBar:hover {
-    background: #0a3547; }
+    background: #001279; }
     .BottomBar:hover svg > circle {
       fill: silver; }
   .BottomBar svg {
@@ -187,7 +187,7 @@
   .BottomBar-number {
     transition: color 200ms; }
     .BottomBar-number-changing {
-      color: #e7d6b5; }
+      color: #88ff00; }
   @media only screen and (min-width: 475px) {
     .BottomBar-vtho {
       font-size: 18px; } }
