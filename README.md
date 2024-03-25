@@ -97,4 +97,10 @@ Install
 18. Start the development server:
     npm run start:dev
 
-   72  npm run start:dev
+To check burn values in DB:
+
+sudo -u postgres psql
+\c seevechain
+\dt
+\d daily_stats
+SELECT * FROM daily_stats;
