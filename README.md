@@ -2,20 +2,7 @@
 
 ## A realtime VeChain visualizer
 
-<img src="https://github.com/Smuzzies/seevechain/assets/110495122/408b40a1-357b-41d0-a059-01e415111165" alt="image" style="border-radius: 10px; width: 80%;">
-
-
-### .env file
-
-Make a file called `.env` in the `seevechain` directory.
-The contents of the file should be:
-
-```
-DATABASE_URL=postgresql://postgres:seevechain@localhost/seevechain
-PORT=1337
-TIME_DIFFERENCE=0
-NODE_ENV=development
-```
+<img src="https://github.com/Smuzzies/seevechain/assets/110495122/408b40a1-357b-41d0-a059-01e415111165" alt="image" style="border-radius: 10px; width: 50%;">
 
 ### Installation Steps
 - Update package list:
@@ -54,6 +41,18 @@ NODE_ENV=development
     ```npm install core-js@3```
 - Start the development server:
     ```npm run start:dev```
+
+### .env file
+
+Make a file called `.env` in the `seevechain` directory.
+The contents of the file should be:
+
+```
+DATABASE_URL=postgresql://postgres:seevechain@localhost/seevechain
+PORT=1337
+TIME_DIFFERENCE=0
+NODE_ENV=development
+```
 
 ### To check burn values in DB:
 
