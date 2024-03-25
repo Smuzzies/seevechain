@@ -1,8 +1,7 @@
 const moment = require('moment');
 const { oneDayAgo } = require('../lib/dateHelpers');
-const axios = require('axios'); // Add this line to import axios module
+const axios = require('axios');
 const saveCache = require('./saveCache');
-
 
 module.exports = async function({ client, block }) {
   const transactionsRecords = await client.query(
@@ -11,9 +10,9 @@ module.exports = async function({ client, block }) {
       WHERE block_number = $1;
     `,
     [block.number]
-  )
+  );
 
-  const transactionIds = transactionsRecords.map(transaction => transaction.id)
+  const transactionIds = transactionsRecords.map(transaction => transaction.id);
 
   const clauseRecords = transactionIds.length === 0
     ? []
@@ -23,15 +22,15 @@ module.exports = async function({ client, block }) {
         WHERE transaction_id IN ($1:csv)
       `,
       [transactionIds]
-    )
+    );
 
-  const clausesByTransactionId = {}
+  const clausesByTransactionId = {};
   clauseRecords.forEach(clause => {
-    if (!clausesByTransactionId[clause.transaction_id]) clausesByTransactionId[clause.transaction_id] = [clause]
-    else clausesByTransactionId[clause.transaction_id].push(clause)
-  })
+    if (!clausesByTransactionId[clause.transaction_id]) clausesByTransactionId[clause.transaction_id] = [clause];
+    else clausesByTransactionId[clause.transaction_id].push(clause);
+  });
 
-  const before = oneDayAgo()
+  const before = oneDayAgo();
   const todaysStatsRecord = await client.one(
     `
       SELECT
@@ -42,21 +41,47 @@ module.exports = async function({ client, block }) {
       WHERE created_at > $1;
     `,
     [before]
-  )
+  );
 
-  const dailyStatsRecords = await client.query(`SELECT * FROM daily_stats ORDER BY day DESC LIMIT 210`)
+  const dailyStatsRecords = await client.query(`SELECT * FROM daily_stats ORDER BY day DESC LIMIT 210`);
 
-  const now = moment()
-  const serverTime = now.add((+process.env.TIME_DIFFERENCE), 'hours').format('HH:mm MM/DD/YY')
+  const now = moment();
+  const serverTime = now.add((+process.env.TIME_DIFFERENCE), 'hours').format('HH:mm MM/DD/YY');
+
+  const prices = await getTokenPrices();
+  const vthoPrice = prices.vtho;
+
+  const processedDailyStats = dailyStatsRecords.map(record => {
+    const vthoBurnUsd = record.vtho_burn * vthoPrice;
+    return {
+      day: moment(record.day).format('YYYY-MM-DD'),
+      vthoBurn: record.vtho_burn,
+      transactionCount: record.transaction_count,
+      clauseCount: record.clause_count,
+      vthoBurnUsd: vthoBurnUsd,
+    };
+  });
+
+  // Update the daily_stats table with the calculated vtho_burn_usd values
+  for (const record of processedDailyStats) {
+    await client.query(
+      `
+        UPDATE daily_stats
+        SET vtho_burn_usd = ROUND($1, 6)
+        WHERE day = $2;
+      `,
+      [record.vthoBurnUsd, record.day]
+    );
+  }
 
   const transactionsUsdBurnRecord = await client.one(
     `
-      SELECT sum(transactions.vtho_burn_usd) AS usdburn
+      SELECT sum(transactions.vtho_burn * $1) AS usdburn
       FROM transactions
-      WHERE created_at > $1;
+      WHERE created_at > $2;
     `,
-    [before]
-  )
+    [vthoPrice, before]
+  );
 
   const processed = {
     block: {
@@ -81,33 +106,28 @@ module.exports = async function({ client, block }) {
       dailyClauses: Number(todaysStatsRecord.dailyclauses),
       dailyVTHOBurn: Number(todaysStatsRecord.dailyvthoburn),
     },
-    dailyStats: dailyStatsRecords.map(record => ({
-      day: moment(record.day).format('YYYY-MM-DD'),
-      vthoBurn: record.vtho_burn,
-      transactionCount: record.transaction_count,
-      clauseCount: record.clause_count,
-      vthoBurnUsd: record.vtho_burn_usd,
-    })),
+    dailyStats: processedDailyStats,
     serverTime,
-    prices: await getTokenPrices(),
+    prices,
     dailyBurnUsd: transactionsUsdBurnRecord.usdburn,
-  }
+  };
 
   await saveCache({
     client,
     cacheName: 'block',
     cache: JSON.stringify(processed),
-  })
+  });
 
-  return processed
-}
+  return processed;
+};
 
 async function getTokenPrices() {
   let vetValue, vthoValue;
 
   // Define API URLs
-    const vetApiUrl = 'https://api.vechain.energy/v1/call/main/0x49eC7192BF804Abc289645ca86F1eD01a6C17713/getLatestValue%20(bytes32%200x7665742d75736400000000000000000000000000000000000000000000000000)%20returns%20(uint256%20value,%20uint64%20updatedAt)';
-    const vthoApiUrl = 'https://api.vechain.energy/v1/call/main/0x49eC7192BF804Abc289645ca86F1eD01a6C17713/getLatestValue%20(bytes32%200x7674686f2d757364000000000000000000000000000000000000000000000000)%20returns%20(uint256%20value,%20uint64%20updatedAt)?formatEther=true';
+  const vetApiUrl = 'https://api.vechain.energy/v1/call/main/0x49eC7192BF804Abc289645ca86F1eD01a6C17713/getLatestValue%20(bytes32%200x7665742d75736400000000000000000000000000000000000000000000000000)%20returns%20(uint256%20value,%20uint64%20updatedAt)';
+  const vthoApiUrl = 'https://api.vechain.energy/v1/call/main/0x49eC7192BF804Abc289645ca86F1eD01a6C17713/getLatestValue%20(bytes32%200x7674686f2d757364000000000000000000000000000000000000000000000000)%20returns%20(uint256%20value,%20uint64%20updatedAt)?formatEther=true';
+
   try {
     const [vetResponse, vthoResponse] = await Promise.all([
       axios.get(vetApiUrl),
