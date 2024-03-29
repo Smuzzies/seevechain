@@ -1254,13 +1254,13 @@ const KNOWN_ADDRESSES = {
   '0x17b6254c7324438b469a01ce80b67dd7c4d5eef8': 'Plair ICO',
   '0x48e8dace6a1976d4912f8b5dcc3f45651c3d4b73': 'Safe Haven Boost',
   '0x27942b0d71919c4aa81b7ae6ba951150faef5ae6': 'VIP-191 Sponsor',
-  '0xb0c224a96655ba8d51f35f98068f5fc12f930946': 'Coinbase (Hot Wallet 1)',
-  '0xda894a5dc94d64efd5b518a7bd567740c4617fcc': 'Coinbase (Hot Wallet 2)',
-  '0x65d0dc1b845a9eb4baabbf28e3c5b4de2e19e51c': 'Coinbase (Hot Wallet 3)',
-  '0xff5ba88a17b2e16d23ff6647e9052e937acb1406': 'Coinbase (Hot Wallet 4)',
-  '0xbf6ba25d7d3e28153549196cd6361fca5e40d635': 'Coinbase (Hot Wallet 5)',
-  '0xf9cb626c6f611ae0255cbb452ae70a9c68fb6d89': 'Coinbase (Hot Wallet 6)',
-  '0xd1815e7a26609a0c07233582e7309c5ae8b25b6f': 'Coinbase (Hot Wallet 7)',
+  '0xb0c224a96655ba8d51f35f98068f5fc12f930946': 'Coinbase HW 1',
+  '0xda894a5dc94d64efd5b518a7bd567740c4617fcc': 'Coinbase HW 2',
+  '0x65d0dc1b845a9eb4baabbf28e3c5b4de2e19e51c': 'Coinbase HW 3',
+  '0xff5ba88a17b2e16d23ff6647e9052e937acb1406': 'Coinbase HW 4',
+  '0xbf6ba25d7d3e28153549196cd6361fca5e40d635': 'Coinbase HW 5',
+  '0xf9cb626c6f611ae0255cbb452ae70a9c68fb6d89': 'Coinbase HW 6',
+  '0xd1815e7a26609a0c07233582e7309c5ae8b25b6f': 'Coinbase HW 7',
 }
 
 function getKnownContract(address, shortOrLong) {
