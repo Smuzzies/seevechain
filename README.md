@@ -41,6 +41,16 @@ npm run start:dev
 
 Use a browser to navigate to `http://localhost:1337/`
 
+### Docker
+
+```shell
+docker compose build
+docker compose up
+```
+
+Use a browser to navigate to `http://localhost:1337/`
+
+
 ### To Add Later
 Install
 1. Update package list:
