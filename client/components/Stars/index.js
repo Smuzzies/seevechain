@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useRef } from 'preact/hooks'
+import logoImage from '../../assets/vetwhite.png';
 
 import './index.sass'
 
@@ -14,6 +15,7 @@ const sf = {
   numStars: null,
   stars: [],
   layers: [],
+  logo: null, // Add a property to store the logo image
 }
 
 export default function Stars() {
@@ -49,8 +51,8 @@ function sfSetup({ starsRef, canvasRef }){
   sf.canvas = canvasRef.current
   sf.container = starsRef.current
   sf.ctx = sf.canvas.getContext("2d")
-  sf.cw = sf.container.getBoundingClientRect().width
-  sf.ch = sf.container.getBoundingClientRect().height
+  sf.cw = window.innerWidth; // Use window.innerWidth instead of container's bounding rect
+  sf.ch = window.innerHeight; // Use window.innerHeight instead of container's bounding rect
 
   sf.canvas.width = sf.cw
   sf.canvas.height = sf.ch
@@ -92,6 +94,16 @@ function sfSetup({ starsRef, canvasRef }){
     renderStars(i, bufferContext)
     sf.layers.push({ y: 0, s: i, buffer })
   }
+
+  // Create a new Image object for the logo
+  sf.logo = new Image();
+  sf.logo.onload = function() {
+    // Logo loaded successfully
+  };
+  sf.logo.onerror = function() {
+    console.error('Failed to load logo image:', logoImage);
+  };
+  sf.logo.src = logoImage;
 }
 
 
@@ -154,6 +166,17 @@ function animatePanel() {
     sf.ctx.drawImage(layer.buffer, layer.x + sf.cw, layer.y)
     sf.ctx.drawImage(layer.buffer, layer.x + sf.cw, layer.y2)
   }
+
+  // Draw the logo
+  const logoWidth = 300;
+  const logoHeight = 300;
+  const logoX = (sf.cw - logoWidth) / 2; // Center the logo horizontally
+  const logoY = (sf.ch - logoHeight) / 2; // Center the logo vertically
+  const logoOpacity = 0.1; // Adjust this value (0.0 - 1.0) to change the transparency
+
+  sf.ctx.globalAlpha = logoOpacity;
+  sf.ctx.drawImage(sf.logo, logoX, logoY, logoWidth, logoHeight);
+  sf.ctx.globalAlpha = 1.0; // Reset the global alpha value
 }
 
 function clearCanvas() {
