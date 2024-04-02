@@ -16,7 +16,8 @@ services:
       - NODE_ENV=development
       - DISABLE_MISSING_BLOCK_SYNC=true
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
   postgres:
     image: postgres:14
     ports:
@@ -35,3 +36,8 @@ services:
       POSTGRES_INITDB_ARGS: "-E UTF8 --locale=C"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d seevechain"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
