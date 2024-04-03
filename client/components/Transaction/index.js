@@ -9,6 +9,7 @@ import vetIcon from '../../assets/vet.png'
 import vthoIcon from '../../assets/vtho.png'
 import haiIcon from '../../assets/hai.png'
 import shaIcon from '../../assets/sha.png'
+import shtIcon from '../../assets/sht.png'
 
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
@@ -33,6 +34,7 @@ const tokenIcons = {
   VTHO: vthoIcon,
   HAI: haiIcon,
   SHA: shaIcon,
+  SHT: shtIcon,
   // Add more token icons if needed
 }
 
