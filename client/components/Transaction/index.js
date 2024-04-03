@@ -7,6 +7,8 @@ import numeral from 'numeral'
 
 import vetIcon from '../../assets/vet.png'
 import vthoIcon from '../../assets/vtho.png'
+import haiIcon from '../../assets/hai.png'
+import shaIcon from '../../assets/sha.png'
 
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
@@ -29,6 +31,8 @@ import './index.sass'
 const tokenIcons = {
   VET: vetIcon,
   VTHO: vthoIcon,
+  HAI: haiIcon,
+  SHA: shaIcon,
   // Add more token icons if needed
 }
 
