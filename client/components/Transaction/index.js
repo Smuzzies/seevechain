@@ -181,13 +181,13 @@ function TransferTransaction({ clauses, transaction }) {
     label = toLabel
   }
 
-  let transfers = '';
+  let transfers = [];
   let justTokens = [];
   Object.entries(amountsByToken).forEach(([token, amount]) => {
     const quantity = amount === 0 ? '< 1' : numeral(amount).format('0.0a');
-    const tokenIcon = tokenIcons[token]; // Get the token icon based on the token symbol
+    const tokenIcon = tokenIcons[token]; // Get the token icon
 
-    transfers += (
+    transfers.push(
       <span key={token}>
         {quantity}{' '}
         {tokenIcon && <img src={tokenIcon} alt={token} style={{ width: '16px', height: '16px' }} />}
