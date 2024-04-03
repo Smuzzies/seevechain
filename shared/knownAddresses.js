@@ -1147,6 +1147,34 @@ const KNOWN_CONTRACTS = {
     short: 'vtho.exchange',
     long: 'vtho.exchange',
   },
+    '0x102a7b7f771d904034471431b2f67e661f1bab1e': {
+    short: 'VeBetterDAO',
+    long: 'B3TR Governor',
+  },
+    '0x27a36c16734cf11eda1bcc1dc78c1ee25d9df7ed': {
+    short: 'VeBetterDAO',
+    long: 'Timelock',
+  },
+    '0x61fe12d6218f2aa4be527e38aac2fac6b529b6b6': {
+    short: 'VeBetterDAO',
+    long: 'X-Allocation Pool',
+  },
+    '0x90c1a329e11ce6429eef0ab9b8f7daab68694e7d': {
+    short: 'VeBetterDAO',
+    long: 'X-Allocation Voting',
+  },
+    '0x3d7616213191a10460e49cfdb7edbf88d6a10942': {
+    short: 'VeBetterDAO',
+    long: 'Emissions',
+    },
+    '0x2d0eff77e390cff063e0567a7735c904cbc4d1cf': {
+    short: 'VeBetterDAO',
+    long: 'Voter Rewards',
+    },
+    '0xa9ac49c030c1148b95f056e86f2531f8f3d5bf27': {
+    short: 'VeBetterDAO',
+    long: 'Galaxy Membership (GM) NFT',
+    },
 }
 
     
@@ -1185,6 +1213,7 @@ const TOKEN_CONTRACTS = {
   '0x99763494a7b545f983ee9fe02a3b5441c7ef1396': 'MVG Token',
   '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token',
   '0xac0ca2a5148e15ef913f9f5cf8eb3cf763f5a43f': 'B3TR Token',
+  '0x9df69ad8ff89063869e04164a11579c0a8532e84': 'VOT3 Token',
 }
 
 const KNOWN_ADDRESSES = {
