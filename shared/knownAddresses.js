@@ -1184,6 +1184,7 @@ const TOKEN_CONTRACTS = {
   '0x28c61940bdcf5a67158d00657e8c3989e112eb38': 'GEMS Token',
   '0x99763494a7b545f983ee9fe02a3b5441c7ef1396': 'MVG Token',
   '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token',
+  '0xac0ca2a5148e15ef913f9f5cf8eb3cf763f5a43f': 'B3TR Token',
 }
 
 const KNOWN_ADDRESSES = {
@@ -1261,6 +1262,7 @@ const KNOWN_ADDRESSES = {
   '0xbf6ba25d7d3e28153549196cd6361fca5e40d635': 'Coinbase HW 5',
   '0xf9cb626c6f611ae0255cbb452ae70a9c68fb6d89': 'Coinbase HW 6',
   '0xd1815e7a26609a0c07233582e7309c5ae8b25b6f': 'Coinbase HW 7',
+  '0xac0ca2a5148e15ef913f9f5cf8eb3cf763f5a43f': 'B3TR Token',
 }
 
 function getKnownContract(address, shortOrLong) {

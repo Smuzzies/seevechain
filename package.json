@@ -1,5 +1,5 @@
 {
-  "name": "seevechain",
+  "name": "seevechaintest",
   "version": "1.0.0",
   "description": "Real time visualizer for the VeChain public blockchain",
   "main": "index.js",
@@ -41,7 +41,7 @@
     "compression": "^1.7.4",
     "compression-webpack-plugin": "^3.1.0",
     "cookie-parser": "^1.4.4",
-    "core-js": "^3.36.0",
+    "core-js": "^3.36.1",
     "css-loader": "^2.1.1",
     "db-migrate": "^0.11.5",
     "db-migrate-pg": "^0.5.0",
@@ -87,5 +87,13 @@
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.0",
     "zustand": "^3.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smuzzies/seevechain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Smuzzies/seevechain/issues"
+  },
+  "homepage": "https://github.com/Smuzzies/seevechain#readme"
 }

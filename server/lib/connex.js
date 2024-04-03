@@ -4,7 +4,7 @@ const commands = require('../commands')
 const sleep = (time) =>new Promise(resolve => setTimeout(resolve, time)) 
 
 async function subscribeToVechainBlocks(io, client) {
-  const driver = await Driver.connect(new SimpleNet('https://node-mainnet.vechain.energy/'))
+  const driver = await Driver.connect(new SimpleNet('https://node-testnet.vechain.energy/'))
   const thor = new Framework(driver).thor
   const tick = thor.ticker()
 

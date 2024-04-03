@@ -125,7 +125,7 @@ export default function Transaction({
   return <div
     className="Transaction"
     style={style}
-    onClick={() => { openInNewTab(`https://vechainstats.com/transaction/${transaction.id}/`) }}
+    onClick={() => { openInNewTab(`https://explore-testnet.vechain.org/transactions/${transaction.id}/`) }}
   >
     <div className="Transaction-background" style={backgroundStyle} />
     <div className="Transaction-foreground" style={foregroundStyle}>
