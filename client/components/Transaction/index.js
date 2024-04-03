@@ -5,6 +5,9 @@ import { useEffect, useState, useRef } from 'preact/hooks'
 import waitFor from 'delay'
 import numeral from 'numeral'
 
+import vetIcon from '../../assets/vet.png'
+import vthoIcon from '../../assets/vtho.png'
+
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
 import numberWithCommas from 'lib/numberWithCommas'
@@ -22,6 +25,12 @@ import {
 } from '../../lib/transactionHelpers'
 
 import './index.sass'
+
+const tokenIcons = {
+  VET: vetIcon,
+  VTHO: vthoIcon,
+  // Add more token icons if needed
+};
 
 const bubbleGrid = {
   windowHeight: 0,
@@ -172,14 +181,28 @@ function TransferTransaction({ clauses, transaction }) {
     label = toLabel
   }
 
-  let transfers = ''
-  let justTokens = []
+  let transfers = '';
+  let justTokens = [];
   Object.entries(amountsByToken).forEach(([token, amount]) => {
-    const quantity = amount === 0 ? '< 1' : numeral(amount).format('0.0a')
-    transfers += `${quantity} ${token}`
-    justTokens.push(token)
-  })
-  if (justTokens.length > 1) transfers = justTokens.join(', ')
+    const quantity = amount === 0 ? '< 1' : numeral(amount).format('0.0a');
+    const tokenIcon = tokenIcons[token]; // Get the token icon based on the token symbol
+
+    transfers += (
+      <span key={token}>
+        {quantity}{' '}
+        {tokenIcon && <img src={tokenIcon} alt={token} style={{ width: '16px', height: '16px' }} />}
+      </span>
+    );
+    justTokens.push(token);
+  });
+
+  if (justTokens.length > 1) {
+    transfers = justTokens.map((token) => (
+      <span key={token}>
+        {tokenIcon && <img src={tokenIcons[token]} alt={token} style={{ width: '16px', height: '16px' }} />}
+      </span>
+    ));
+  }
 
   const types = transaction.reverted ? 'Reverted' : 'Transfer'
   return <Fragment>
@@ -210,13 +233,18 @@ function DataTransaction({transaction, VTHOBurn, types}) {
     contract = setContract(clauses)
   }
 
-  return <Fragment>
-    <TypeTag types={types} clauses={clauses.length}/>
-    {contract}
-    <div className="Transaction-subText">
-      {numberWithCommas(VTHOBurn)} Burn
-    </div>
-  </Fragment>
+  return (
+    <Fragment>
+      <TypeTag types={types} clauses={clauses.length} />
+      {contract}
+      <div className="Transaction-subText">
+        <span style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={vthoIcon} alt="VTHO" style={{ width: '16px', height: '16px', marginRight: '4px' }} />
+          {numberWithCommas(VTHOBurn)} Burn
+        </span>
+      </div>
+    </Fragment>
+  );
 }
 
 function setContract(clauses) {
