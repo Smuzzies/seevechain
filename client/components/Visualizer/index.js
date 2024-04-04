@@ -29,6 +29,9 @@ export default function Visualizer() {
   const [loaded, setLoaded] = useState(false)
   const initialized = useRef()
   const currentBlockRef = useRef()
+  const handleSwitchToMainnet = () => {
+    window.location.href = 'https://testnet.myvechain.com';
+  };
 
   useEffect(() => {
     const vechainIdCookie = Cookies.get('seeVechainUid')
@@ -88,6 +91,7 @@ export default function Visualizer() {
     <BottomBar togglePageModalVisibility={togglePageModalVisibility} />
     <Transactions currentBlockRef={currentBlockRef} soundOn={soundOn}
     />
+    <div className="floating-button" onClick={handleSwitchToMainnet}>Switch to TESTNET</div>
   </div>
 }
 

@@ -49,9 +49,6 @@ export default function BottomBar({ togglePageModalVisibility }) {
           <span className={numberClass}>{numberWithCommas(dailyTotals.dailyClauses) || 0}</span>
         </div>
       </div>
-      <button className="BottomBar-button" onClick={navigateToTestnet}>
-        Switch to TESTNET
-      </button>
     </div>
   )
 }
