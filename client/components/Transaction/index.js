@@ -7,6 +7,9 @@ import numeral from 'numeral'
 
 import vetIcon from '../../assets/vet.png'
 import vthoIcon from '../../assets/vtho.png'
+import haiIcon from '../../assets/hai.png'
+import shaIcon from '../../assets/sha.png'
+import shtIcon from '../../assets/sht.png'
 
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
@@ -29,8 +32,11 @@ import './index.sass'
 const tokenIcons = {
   VET: vetIcon,
   VTHO: vthoIcon,
+  HAI: haiIcon,
+  SHA: shaIcon,
+  SHT: shtIcon,
   // Add more token icons if needed
-};
+}
 
 const bubbleGrid = {
   windowHeight: 0,
@@ -185,23 +191,37 @@ function TransferTransaction({ clauses, transaction }) {
   let justTokens = [];
   Object.entries(amountsByToken).forEach(([token, amount]) => {
     const quantity = amount === 0 ? '< 1' : numeral(amount).format('0.0a');
-    const tokenIcon = tokenIcons[token]; // Get the token icon
-
-    transfers.push(
+    const tokenIcon = tokenIcons[token] || null; // Get the token icon or set it to null if not found
+  
+    const transferElement = (
       <span key={token}>
         {quantity}{' '}
-        {tokenIcon && <img src={tokenIcon} alt={token} style={{ width: '16px', height: '16px' }} />}
+        {tokenIcon ? (
+          <img src={tokenIcon} alt={token} style={{ width: '16px', height: '16px' }} />
+        ) : (
+          token
+        )}
       </span>
     );
+  
+    transfers.push(transferElement);
     justTokens.push(token);
   });
-
+  
   if (justTokens.length > 1) {
-    transfers = justTokens.map((token) => (
-      <span key={token}>
-        {tokenIcon && <img src={tokenIcons[token]} alt={token} style={{ width: '16px', height: '16px' }} />}
-      </span>
-    ));
+    transfers = justTokens.map((token) => {
+      const tokenIcon = tokenIcons[token] || null; // Get the token icon or set it to null if not found
+  
+      return (
+        <span key={token}>
+          {tokenIcon ? (
+            <img src={tokenIcon} alt={token} style={{ width: '16px', height: '16px' }} />
+          ) : (
+            token
+          )}
+        </span>
+      );
+    });
   }
 
   const types = transaction.reverted ? 'Reverted' : 'Transfer'
@@ -325,5 +345,8 @@ function getBackgroundStyle({ transaction, size }) {
 }
 
 function formatAddress(address) {
-  return `${address.slice(2,6)}..${address.slice(-4)}`
+  if (typeof address !== 'string' || !address) {
+    return 'Invalid Address';
+  }
+  return `${address.slice(2,6)}..${address.slice(-4)}`;
 }
