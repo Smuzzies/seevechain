@@ -41,7 +41,7 @@ const KNOWN_CONTRACTS = {
     short: 'Mugshot.vet',
     long: 'Mugshot.vet',
   },
-  '0xc208632f2054b909cc1898f10b5d3d7cab459371': {
+  '0xe3fe6464bbc8c1d44e0bfd32bb1f0ff00318a3e0': {
     short: 'Cleanify.vet',
     long: 'Cleanify Campaigns',
   },
