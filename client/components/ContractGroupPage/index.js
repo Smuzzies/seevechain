@@ -34,7 +34,7 @@ export default function ContractGroupPage({}) {
   const topContracts = useAppState(s => s.topContracts)
   if (!topContracts.length) return <div className="ContractGroupPage"><Spinner /></div>
 
-  const { groups } = getGroupsAndFilteredContractsFromTopContracts(topContracts)
+  const { groups, filteredContracts } = getGroupsAndFilteredContractsFromTopContracts(topContracts)
   const group = groups[groupName]
 
   let className = 'ContractGroupPage'
@@ -50,6 +50,8 @@ export default function ContractGroupPage({}) {
     }} />
   </div>
 }
+
+// ... (rest of the code remains the same) ...
 
 const groupProfileProps = {
   'VIMworld': {
@@ -113,16 +115,32 @@ function GroupProfile({ banner, logo, url, bio, setImageLoading }){
 }
 
 function ContractGroup({ name, activeContracts, setImageLoading, imageLoading }) {
-  const burnContracts = [...activeContracts].sort((a, b) => b.vthoBurn - a.vthoBurn)
+  const vthoPrice = useAppState((s) => s.prices.vtho);
+
+  // Create a new array with valid vthoBurn and usdBurned values
+  const contractsWithValidValues = activeContracts.map((contract) => {
+    const vthoBurn = contract.vthoBurn;
+    const isValidVthoBurn = typeof vthoBurn === 'number' && isFinite(vthoBurn);
+    const usdBurned = isValidVthoBurn ? vthoBurn * vthoPrice : 0;
+
+    return {
+      ...contract,
+      validVthoBurn: isValidVthoBurn ? vthoBurn : 0,
+      usdBurned,
+    };
+  });
+
+  const burnContracts = [...contractsWithValidValues].sort((a, b) => b.validVthoBurn - a.validVthoBurn);
   const burnDataPoints = {
-    labels: getLabels(burnContracts, 'vthoBurn'),
+    labels: getLabels(burnContracts, 'validVthoBurn'),
     datasets: [{
       label: 'VTHO Burn by Contract',
       backgroundColor: colorSet,
-      data: burnContracts.map(contract => contract.vthoBurn),
+      data: burnContracts.map(contract => contract.validVthoBurn),
     }]
-  }
-  const clausesContracts = [...activeContracts].sort((a, b) => b.clauses - a.clauses)
+  };
+
+  const clausesContracts = [...contractsWithValidValues].sort((a, b) => b.clauses - a.clauses);
   const clausesDataPoints = {
     labels: getLabels(clausesContracts, 'clauses'),
     datasets: [{
@@ -130,52 +148,54 @@ function ContractGroup({ name, activeContracts, setImageLoading, imageLoading })
       backgroundColor: colorSet2,
       data: clausesContracts.map(contract => contract.clauses),
     }]
-  }
+  };
 
-  const usdBurnContracts = [...activeContracts].sort((a, b) => b.usdBurned - a.usdBurned)
+  const usdBurnContracts = [...contractsWithValidValues].sort((a, b) => b.usdBurned - a.usdBurned);
   const usdBurnDataPoints = {
     labels: getLabels(usdBurnContracts, 'usdBurned', '$'),
     datasets: [{
-      label: 'USD VTHO Burn by Contract',
+      label: `USD VTHO Burn by Contract (VTHO Price: $${vthoPrice})`,
       backgroundColor: colorSet3,
       data: usdBurnContracts.map(contract => contract.usdBurned),
     }]
-  }
+  };
 
-  const profileProps = groupProfileProps[name]
+  const profileProps = groupProfileProps[name];
 
-  return <div className="ContractGroupPage-ContractGroup">
-    {imageLoading && profileProps && <Spinner />}
-    {profileProps && <GroupProfile {...{...profileProps, setImageLoading}} />}
-    <div className="ContractGroupPage-ContractGroup-header">
-      {name} Contracts
+  return (
+    <div className="ContractGroupPage-ContractGroup">
+      {imageLoading && profileProps && <Spinner />}
+      {profileProps && <GroupProfile {...{ ...profileProps, setImageLoading }} />}
+      <div className="ContractGroupPage-ContractGroup-header">
+        {name} Contracts
+      </div>
+      <div
+        className="ContractGroupPage-chart"
+        onClick={onContractClick({ contracts: burnContracts })}
+      >
+        <BarChart {...{
+          data: burnDataPoints,
+          height: burnContracts.length * 80,
+        }} />
+      </div>
+      <div
+        className="ContractGroupPage-chart"
+        onClick={onContractClick({ contracts: clausesContracts })}
+      >
+        <BarChart {...{
+          data: clausesDataPoints,
+          height: clausesContracts.length * 80,
+        }} />
+      </div>
+      <div
+        className="ContractGroupPage-chart"
+        onClick={onContractClick({ contracts: usdBurnContracts })}
+      >
+        <BarChart {...{
+          data: usdBurnDataPoints,
+          height: usdBurnContracts.length * 80,
+        }} />
+      </div>
     </div>
-    <div
-      className="ContractGroupPage-chart"
-      onClick={onContractClick({ contracts: burnContracts })}
-    >
-      <BarChart {...{
-        data: burnDataPoints,
-        height: burnContracts.length * 80,
-      }}/>
-    </div>
-    <div
-      className="ContractGroupPage-chart"
-      onClick={onContractClick({ contracts: clausesContracts })}
-    >
-      <BarChart {...{
-        data: clausesDataPoints,
-        height: clausesContracts.length * 80,
-      }}/>
-    </div>
-    <div
-      className="ContractGroupPage-chart"
-      onClick={onContractClick({ contracts: usdBurnContracts })}
-    >
-      <BarChart {...{
-        data: usdBurnDataPoints,
-        height: usdBurnContracts.length * 80,
-      }}/>
-    </div>
-  </div>
+  );
 }
