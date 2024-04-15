@@ -49,6 +49,10 @@ const KNOWN_CONTRACTS = {
     short: 'Cleanify.vet',
     long: 'Cleanify Dailys',
   },
+    '0xb6e91cbc5f2130c965edc168e3bf8e57af93ce10': {
+    short: 'NFBC',
+    long: 'NFBC Reads',
+  },
 }
 
     
