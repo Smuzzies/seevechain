@@ -49,7 +49,8 @@ const KNOWN_CONTRACTS = {
     short: 'Cleanify.vet',
     long: 'Cleanify Dailys',
   },
-    '0xb6e91cbc5f2130c965edc168e3bf8e57af93ce10': {
+  '0xb6e91cbc5f2130c965edc168e3bf8e57af93ce10': 'NFBC1',
+  '0x4f8046bf130362c4d2c05a23fdb72af4668482fe': 'NFBC2', {
     short: 'NFBC',
     long: 'NFBC Reads',
   },
