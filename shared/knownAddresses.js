@@ -175,7 +175,11 @@ const KNOWN_CONTRACTS = {
     short: 'VeRocket',
     long: 'VeRocket VeUSD',
   },
-  '0x1a8abd6d5627eb26ad71c0c7ae5224cdc640faf3': {
+  '0x7d7aa0fbbe1fd0fe6cfa8b80f32c2e6aad917983': {
+    short: 'VeRocket',
+    long: 'VeRocket vVET/SHT',
+  },
+    '0x1a8abd6d5627eb26ad71c0c7ae5224cdc640faf3': {
     short: 'VeRocket',
     long: 'VeRocket vVET/SHA',
   },
