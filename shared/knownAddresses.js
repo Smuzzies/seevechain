@@ -49,11 +49,11 @@ const KNOWN_CONTRACTS = {
     short: 'Cleanify.vet',
     long: 'Cleanify Dailys',
   },
-  '0xb49a6333d5c9d499f225b537c304badfbdb5099c': {
+  '0xb36a33656a5fbd3484d7534eaf020c763b94166d': {
     short: 'NFBookClub',
     long: 'NFBC 1',
   },
-  '0xe31d6c0b8fcf96696a55ef77dd03a16dea8faa48': {
+  '0x7b0a0bf9c0b3dd25e8021d1532c5d459e107692c': {
     short: 'NFBookClub',
     long: 'NFBC 2',
   },
