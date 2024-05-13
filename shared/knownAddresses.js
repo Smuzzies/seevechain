@@ -37,7 +37,7 @@ const KNOWN_CONTRACTS = {
     short: 'VeBetterDAO',
     long: 'Galaxy Membership (GM) NFT',
     },
-  '0xc208632f2054b909cc1898f10b5d3d7cab459371': {
+  '0xa43224c7388f0ecd89d9dec6ff6464a875e2d67e': {
     short: 'Mugshot.vet',
     long: 'Mugshot.vet',
   },
