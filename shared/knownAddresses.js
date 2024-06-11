@@ -732,32 +732,36 @@ const KNOWN_CONTRACTS = {
     long: 'Metatun NFT',
   },
   '0x910607db19dce5651da4e68950705d6e49bc01a5': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'INKA Empire NFT',
   },
   '0x9d3837c3188f58ed579f98cfe922dccef25d6e95': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'INKA Empire Conquest NFT',
   },
   '0x0b6f1e2220e7498111db0e56d972f93dd035da32': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'Gods of Olympus NFT',
   },
   '0x4035dee4581deb866dc18c97696a5b78f393bcfe': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'Inka Boss Battling',
   },
   '0xf639b215679d2411e0e2b25191dcc0ac38f1d798': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'Gods Boss Battling',
   },
   '0x54a343c40a6ee31b27ca98e4c814d5bd02065b20': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'Gates of Hell1',
   },
   '0xf606d79a1e962b1291d1dcf1f7226ecfbd8c63fc': {
-    short: 'Llama Digital Studios',
+    short: 'The Golden Empire',
     long: 'Gates of Hell2',
+  },
+  '0x13f756000ddf04a6b568700d498f90388e95ffec': {
+    short: 'The Golden Empire',
+    long: 'Gods 2.0 Boss Battling',
   },
   '0xbdf2b45bd428bba31c46b8d8d1f50615ee0e1416': {
     short: '3DAbles',
