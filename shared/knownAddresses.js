@@ -763,6 +763,18 @@ const KNOWN_CONTRACTS = {
     short: 'The Golden Empire',
     long: 'Gods 2.0 Boss Battling',
   },
+  '0x75e7d14d7b62e4cf412d3f64d92d36c421df2463': {
+    short: 'The Golden Empire',
+    long: 'Gods 2.0 Questing (Battle Companions)',
+  },
+  '0x7633b0e3c21cc6bacf5780cab8b622b7495666a7': {
+    short: 'The Golden Empire',
+    long: 'Llamamon Evolutions',
+  },
+  '0x9d71cce7bde91e220a285fe45d217ab76ac81ad9': {
+    short: 'The Golden Empire',
+    long: 'Gold Staking Dashboard',
+  },
   '0xbdf2b45bd428bba31c46b8d8d1f50615ee0e1416': {
     short: '3DAbles',
     long: '3DAbles: Generated NFT',
