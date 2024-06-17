@@ -626,6 +626,10 @@ const KNOWN_CONTRACTS = {
     short: 'Black VeMarket',
     long: 'Black VeMarket - Marketplace',
   },
+  '0xa6c48b784e7b96c4fdfb2db33ecddac43d733444': {
+    short: 'Black VeMarket',
+    long: 'Black VeMarket - Marketplace 2',
+  },
   '0x87a4e53d6e65cdfada102818e9eab70d1230391f': {
     short: 'Black VeMarket',
     long: 'Black VeMarket - Art NFTs',
@@ -681,6 +685,18 @@ const KNOWN_CONTRACTS = {
   '0xd4310196a56c5193811ae418b8729d82b34abdcc': {
     short: 'Black VeMarket',
     long: 'Dragon of Singapura Weapons NFT',
+  },
+  '0xe5a2d2811fe9fc91586af686f2e30a756d15e721': {
+    short: 'Squad',
+    long: 'Squad NFT Staking',
+  },
+  '0x98ec1e80031084eee055cb605c5b86eb87f60c71': {
+    short: 'Squad',
+    long: 'Questing Shell Mates 1',
+  },
+  '0x6e60fa61974c76001a0a8e6759f5348b7abcae2e': {
+    short: 'Squad',
+    long: 'Questing Shell Mates 2',
   },
   '0x5a45edc6311017e6b12ebfb32c28a8d36ecf7686': 'Avery Dennison',
   '0xd948e6cf79ab34b716350db4aee33cf0031cf7a1': 'XGG Black Tea',
@@ -1204,6 +1220,8 @@ const TOKEN_CONTRACTS = {
   '0x28c61940bdcf5a67158d00657e8c3989e112eb38': 'GEMS Token',
   '0x99763494a7b545f983ee9fe02a3b5441c7ef1396': 'MVG Token',
   '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token',
+  '0xb27a1fb87935b85cdaa2e16468247278c74c5ec7': 'SQUAD Token',
+  '0x7ae288b7224ad8740b2d4fc2b2c8a2392caea3c6': 'BVC Token',
 }
 
 const KNOWN_ADDRESSES = {
