@@ -11,6 +11,8 @@ import haiIcon from '../../assets/hai.png'
 import shaIcon from '../../assets/sha.png'
 import shtIcon from '../../assets/sht.png'
 import squadIcon from '../../assets/squad.png'
+import b3trIcon from '../../assets/b3tr.png'
+import vot3Icon from '../../assets/vot3.png'
 
 import Icon from 'components/Icon'
 import useAppState from 'lib/appState'
@@ -37,6 +39,8 @@ const tokenIcons = {
   SHA: shaIcon,
   SHT: shtIcon,
   SQUAD: squadIcon,
+  B3TR: b3trIcon,
+  VOT3: vot3Icon,
   // Add more token icons if needed
 }
 

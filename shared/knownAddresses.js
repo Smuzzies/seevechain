@@ -13,6 +13,54 @@ const KNOWN_CONTRACTS = {
     short: 'KaY',
     long: 'KaY - Not Part of VeChain',
   },
+  '0x5ef79995fe8a89e0812330e4378eb2660cede699': {
+    short: 'VeBetterDAO',
+    long: 'B3TR',
+  },
+  '0x1c65c25fabe2fc1bcb82f253fa0c916a322f777c': {
+    short: 'VeBetterDAO',
+    long: 'B3TRGovernor',
+  },
+  '0xdf94739bd169c84fe6478d8420bb807f1f47b135': {
+    short: 'VeBetterDAO',
+    long: 'Emissions',
+  },
+  '0x93b8cd34a7fc4f53271b9011161f7a2b5fea9d1f': {
+    short: 'VeBetterDAO',
+    long: 'GalaxyMember',
+  },
+  '0x7b7eaf620d88e38782c6491d7ce0b8d8cf3227e4': {
+    short: 'VeBetterDAO',
+    long: 'TimeLock',
+  },
+  '0xd5903bcc66e439c753e525f8af2fec7be2429593': {
+    short: 'VeBetterDAO',
+    long: 'Treasury',
+  },
+  '0x76ca782b59c74d088c7d2cce2f211bc00836c602': {
+    short: 'VeBetterDAO',
+    long: 'VOT3',
+  },
+  '0x838a33af756a6366f93e201423e1425f67ec0fa7': {
+    short: 'VeBetterDAO',
+    long: 'VoterRewards',
+  },
+  '0x8392b7ccc763db03b47afcd8e8f5e24f9cf0554d': {
+    short: 'VeBetterDAO',
+    long: 'X2EarnApps',
+  },
+  '0x6bee7ddab6c99d5b2af0554eaea484ce18f52631': {
+    short: 'VeBetterDAO',
+    long: 'X2EarnRewardsPool',
+  },
+  '0x4191776f05f4be4848d3f4d587345078b439c7d3': {
+    short: 'VeBetterDAO',
+    long: 'XAllocationPool',
+  },
+  '0x89a00bb0947a30ff95beef77a66aede3842fe5b7': {
+    short: 'VeBetterDAO',
+    long: 'XAllocationVoting',
+  },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
     long: 'DNV',
@@ -1184,7 +1232,6 @@ const KNOWN_CONTRACTS = {
     long: 'vtho.exchange',
   },
 }
-
     
 const TOKEN_CONTRACTS = {
   '0x8fcddbb322b18d8bdaec9243e9f4c6eb8901e566': '3DAbles Token',
@@ -1222,6 +1269,8 @@ const TOKEN_CONTRACTS = {
   '0x9af004570f2a301d99f2ce4554e564951ee48e3c': 'SHT Token',
   '0xb27a1fb87935b85cdaa2e16468247278c74c5ec7': 'SQUAD Token',
   '0x7ae288b7224ad8740b2d4fc2b2c8a2392caea3c6': 'BVC Token',
+  '0x5ef79995fe8a89e0812330e4378eb2660cede699': 'B3TR Token',
+  '0x76ca782b59c74d088c7d2cce2f211bc00836c602': 'VOT3 Token',
 }
 
 const KNOWN_ADDRESSES = {
