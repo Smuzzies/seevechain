@@ -27,6 +27,8 @@ import threedablesBanner from 'assets/3dables_banner.png'
 import threedablesIcon from 'assets/3dables_icon.png'
 import vebetterdaoBanner from 'assets/vebetterdao.png'
 import vebetterdaoIcon from 'assets/b3tr.png'
+import worldofvBanner from 'assets/wov_banner.png'
+import worldofvIcon from 'assets/wov.png'
 
 import './index.sass'
 
@@ -103,6 +105,12 @@ const groupProfileProps = {
     logo: vebetterdaoIcon,
     url: 'https://vebetterdao.org/',
     bio: 'VeBetterDAO aims to take sustainability mainstream by unlocking value of collective sustainable actions. Join now and be better.',
+  },
+  'WorldOfV': {
+    banner: worldofvBanner,
+    logo: worldofvIcon,
+    url: 'https://worldofv.art/',
+    bio: 'World of V is the zero-fee, green NFT marketplace built on the VeChain blockchain that aims to build a safe, entertaining space for digital creators and art enthusiasts across the world. We strongly believe in the power of a community-driven, inclusive movement committed to shape a culture where environmental sustainability and accessibility are core principles.',
   },
 }
 
