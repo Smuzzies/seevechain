@@ -22,9 +22,11 @@ import vseaIcon from 'assets/vsea_icon.png'
 import diceBanner from 'assets/dice_banner.png'
 import diceIcon from 'assets/dice_icon.png'
 import vechainBanner from 'assets/vechain_banner.png'
-import vechainIcon from 'assets/vechain_icon.png'
+import vechainIcon from 'assets/vet.png'
 import threedablesBanner from 'assets/3dables_banner.png'
 import threedablesIcon from 'assets/3dables_icon.png'
+import vebetterdaoBanner from 'assets/vebetterdao.png'
+import vebetterdaoIcon from 'assets/b3tr.png'
 
 import './index.sass'
 
@@ -95,6 +97,12 @@ const groupProfileProps = {
     logo: threedablesIcon,
     url: 'https://3dables.smuzzies.com/',
     bio: '3DAbles is a dApp that allows a collection holder in the VeChain Thor blockchain to create prestaged artwork using the NFTs the holder owns. No longer does your NFT have to remain dormant in your wallet.',
+  },
+  'VeBetterDAO': {
+    banner: vebetterdaoBanner,
+    logo: vebetterdaoIcon,
+    url: 'https://vebetterdao.org/',
+    bio: 'VeBetterDAO aims to take sustainability mainstream by unlocking value of collective sustainable actions. Join now and be better.',
   },
 }
 
