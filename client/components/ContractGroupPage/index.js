@@ -29,6 +29,12 @@ import vebetterdaoBanner from 'assets/vebetterdao.png'
 import vebetterdaoIcon from 'assets/b3tr.png'
 import worldofvBanner from 'assets/wov_banner.png'
 import worldofvIcon from 'assets/wov.png'
+import goldenempireBanner from 'assets/goldenempirebanner.png'
+import goldenempireIcon from 'assets/goldenempire.png'
+import squadBanner from 'assets/squadbanner.png'
+import squadIcon from 'assets/squadlogo.png'
+import blackvBanner from 'assets/blackvbanner.png'
+import blackvIcon from 'assets/blackv.png'
 
 import './index.sass'
 
@@ -111,6 +117,24 @@ const groupProfileProps = {
     logo: worldofvIcon,
     url: 'https://worldofv.art/',
     bio: 'World of V is the zero-fee, green NFT marketplace built on the VeChain blockchain that aims to build a safe, entertaining space for digital creators and art enthusiasts across the world. We strongly believe in the power of a community-driven, inclusive movement committed to shape a culture where environmental sustainability and accessibility are core principles.',
+  },
+  'The Golden Empire': {
+    banner: goldenempireBanner,
+    logo: goldenempireIcon,
+    url: 'https://thegoldenempire.art/',
+    bio: 'Play, quest, stake, and earn as you delve into the riches of the Golden Empire through stunning NFTs. Shape your journey, accumulate rewards, and become part of an evolving legacy. Join the Golden Empire, where history, innovation, and rewards unite in a golden fusion on the VeChain blockchain. Golden Empire offers an unparalleled NFT experience, blending historical intrigue with modern blockchain technology. It is an invitation to explore, learn, and grow within a community that values both past and future.',
+  },
+  'Squad': {
+    banner: squadBanner,
+    logo: squadIcon,
+    url: 'https://squadvechain.art/',
+    bio: 'Collect unique NFTs, engage in gamified challenges, and earn tokens as you play. Join the squad and turn your memes into a winning streak!',
+  },
+  'Black VeMarket': {
+    banner: blackvBanner,
+    logo: blackvIcon,
+    url: 'https://squadvechain.art/',
+    bio: 'Your premier destination for exclusive, premium-quality NFTs tailored for discerning collectors. Specializing in unique, high-end digital art and collectibles, BlackVeMarket offers an unparalleled shopping experience with curated NFT collections that emphasize sophistication and innovation. Whether you aree looking for rare digital art pieces, cutting-edge collectibles, or unique virtual assets.',
   },
 }
 
