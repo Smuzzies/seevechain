@@ -61,6 +61,30 @@ const KNOWN_CONTRACTS = {
     short: 'VeBetterDAO',
     long: 'XAllocationVoting',
   },
+  '0x7579454536be1013813a55435d9547ee3c0c5d13': {
+    short: 'x2earn Apps',
+    long: 'Mugshot',
+  },
+  '0xa58681692addd2e8e37f9113d40bb9253c03f65e': {
+    short: 'x2earn Apps',
+    long: 'Cleanify Daily',
+  },
+  '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
+    short: 'x2earn Apps',
+    long: 'Cleanify Campaigns',
+  },
+  '0xD3db79d40b99EF250F8636196eB0e5AAc8ecFaab': {
+    short: 'x2earn Apps',
+    long: 'NFBC L2E1',
+  },
+  '0x3853F5D3Be3fe14f366053e77844520D216551F1': {
+    short: 'x2earn Apps',
+    long: 'NFBC L2E2',
+  },
+  '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
+    short: 'x2earn Apps',
+    long: 'NFBC Airdrop',
+  },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
     long: 'DNV',
