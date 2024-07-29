@@ -73,11 +73,11 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn Apps',
     long: 'Cleanify Campaigns',
   },
-  '0x7c2ea281ec4bcb32455035a67dc4f2f6dbcb213d': {
+  '0x30b9030e1a0719d228fe6eb18967c44916fc295d': {
     short: 'x2earn Apps',
     long: 'NFBC L2E1',
   },
-  '0x3853f5d3be3fe14f366053e77844520d216551f1': {
+  '0x7dbc4d640b04063eba417b699dbcb3d25ec6657b': {
     short: 'x2earn Apps',
     long: 'NFBC L2E2',
   },
