@@ -20,7 +20,7 @@ server.listen(port, '0.0.0.0', async () => {
 async function startVechainConnection(io, client) {
   try {
     setInterval(async () => {
-      if (!gettingMissingInProgress) {
+      if (!gettingMissingInProgress && !process.env.DISABLE_MISSING_BLOCK_SYNC) {
         gettingMissingInProgress = true
         childProcess.fork(path.join(__dirname, './getMissingBlocksAndTransactions'))
           .on('exit', function() { gettingMissingInProgress = false })

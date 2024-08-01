@@ -54,6 +54,15 @@ TIME_DIFFERENCE=0
 NODE_ENV=development
 ```
 
+### Local Test with Docker
+
+```shell
+docker compose build
+docker compose up
+```
+
+Use a browser to navigate to `http://localhost:1337/`
+
 ### To check burn values in DB:
 
 - `sudo -u postgres psql`
