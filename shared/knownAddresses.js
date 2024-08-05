@@ -61,29 +61,49 @@ const KNOWN_CONTRACTS = {
     short: 'VeBetterDAO',
     long: 'XAllocationVoting',
   },
-  '0x7579454536be1013813a55435d9547ee3c0c5d13': {
-    short: 'x2earn Apps',
+  '0x89a00bb0947a30ff95beef77a66aede3842fe5b7': {
+    short: 'VeBetterDAO',
+    long: 'WP',
+  },
+  '0x7af6ee1f817f66ce47915a23b59dfc451d760c28': {
+    short: 'VeBetterDAO',
+    long: 'WP2',
+  },
+  '0xb6f43457600b1f3b7b98fc4394a9f1134ffc721d': {
+    short: 'x2earn - Mugshot',
     long: 'Mugshot',
   },
   '0xa58681692addd2e8e37f9113d40bb9253c03f65e': {
-    short: 'x2earn Apps',
+    short: 'x2earn - Cleanify',
     long: 'Cleanify Daily',
   },
   '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
-    short: 'x2earn Apps',
+    short: 'x2earn - Cleanify',
     long: 'Cleanify Campaigns',
   },
-  '0x30b9030e1a0719d228fe6eb18967c44916fc295d': {
-    short: 'x2earn Apps',
+  '0x6754f3138bfe5b85c80eed802d6b888b4c92f7e5': {
+    short: 'x2earn - NFBC',
     long: 'NFBC L2E1',
   },
   '0x7dbc4d640b04063eba417b699dbcb3d25ec6657b': {
-    short: 'x2earn Apps',
+    short: 'x2earn - NFBC',
     long: 'NFBC L2E2',
   },
   '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
-    short: 'x2earn Apps',
+    short: 'x2earn - NFBC',
     long: 'NFBC Airdrop',
+  },
+  '0x6ef42c8f4b99d483b1f37f9dfc55c854549ad122': {
+    short: 'x2earn - Oily',
+    long: 'Oily L2E',
+  },
+  '0xa0b2c5275a9edd4594bb211f629adec6ac9c36e9': {
+    short: 'x2earn - Oily',
+    long: 'Oily M2E',
+  },
+  '0x642a263bee274109a2513f219e9dc975d64e4ebe': {
+    short: 'x2earn - veDelegate',
+    long: 'veDelegate',
   },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
@@ -1295,6 +1315,7 @@ const TOKEN_CONTRACTS = {
   '0x7ae288b7224ad8740b2d4fc2b2c8a2392caea3c6': 'BVC Token',
   '0x5ef79995fe8a89e0812330e4378eb2660cede699': 'B3TR Token',
   '0x76ca782b59c74d088c7d2cce2f211bc00836c602': 'VOT3 Token',
+  '0xb0d5b68a96fab5f3047f6de6f9377a460db7e528': 'PLG Token',
 }
 
 const KNOWN_ADDRESSES = {
