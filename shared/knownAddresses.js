@@ -61,13 +61,9 @@ const KNOWN_CONTRACTS = {
     short: 'VeBetterDAO',
     long: 'XAllocationVoting',
   },
-  '0x89a00bb0947a30ff95beef77a66aede3842fe5b7': {
-    short: 'VeBetterDAO',
-    long: 'WP',
-  },
   '0x7af6ee1f817f66ce47915a23b59dfc451d760c28': {
     short: 'VeBetterDAO',
-    long: 'WP2',
+    long: 'WP',
   },
   '0xb6f43457600b1f3b7b98fc4394a9f1134ffc721d': {
     short: 'x2earn - Mugshot',
@@ -89,7 +85,7 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - NFBC',
     long: 'NFBC L2E2',
   },
-  '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
+  '0x7c2ea281ec4bcb32455035a67dc4f2f6dbcb213d': {
     short: 'x2earn - NFBC',
     long: 'NFBC Airdrop',
   },
