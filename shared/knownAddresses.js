@@ -19,7 +19,7 @@ const KNOWN_CONTRACTS = {
   },
   '0x1c65c25fabe2fc1bcb82f253fa0c916a322f777c': {
     short: 'VeBetterDAO',
-    long: 'B3TRGovernor',
+    long: 'B3TR Governor',
   },
   '0xdf94739bd169c84fe6478d8420bb807f1f47b135': {
     short: 'VeBetterDAO',
@@ -27,7 +27,7 @@ const KNOWN_CONTRACTS = {
   },
   '0x93b8cd34a7fc4f53271b9011161f7a2b5fea9d1f': {
     short: 'VeBetterDAO',
-    long: 'GalaxyMember',
+    long: 'Galaxy Member',
   },
   '0x7b7eaf620d88e38782c6491d7ce0b8d8cf3227e4': {
     short: 'VeBetterDAO',
@@ -43,23 +43,23 @@ const KNOWN_CONTRACTS = {
   },
   '0x838a33af756a6366f93e201423e1425f67ec0fa7': {
     short: 'VeBetterDAO',
-    long: 'VoterRewards',
+    long: 'Voter Rewards',
   },
   '0x8392b7ccc763db03b47afcd8e8f5e24f9cf0554d': {
     short: 'VeBetterDAO',
-    long: 'X2EarnApps',
+    long: 'X2Earn Apps',
   },
   '0x6bee7ddab6c99d5b2af0554eaea484ce18f52631': {
     short: 'VeBetterDAO',
-    long: 'X2EarnRewardsPool',
+    long: 'X2Earn Rewards Pool',
   },
   '0x4191776f05f4be4848d3f4d587345078b439c7d3': {
     short: 'VeBetterDAO',
-    long: 'XAllocationPool',
+    long: 'XAllocation Pool',
   },
   '0x89a00bb0947a30ff95beef77a66aede3842fe5b7': {
     short: 'VeBetterDAO',
-    long: 'XAllocationVoting',
+    long: 'XAllocation Voting',
   },
   '0x7af6ee1f817f66ce47915a23b59dfc451d760c28': {
     short: 'VeBetterDAO',
@@ -76,6 +76,10 @@ const KNOWN_CONTRACTS = {
   '0x7a11d63338576ae8c038868433ea199d7e5319a6': {
     short: 'x2earn - Cleanify',
     long: 'Cleanify Campaigns',
+  },
+  '0x190ab784b0b68deec7e831502dd65fdd1d2a8f99': {
+    short: 'x2earn - Greencart',
+    long: 'Greencart',
   },
   '0x6754f3138bfe5b85c80eed802d6b888b4c92f7e5': {
     short: 'x2earn - NFBC',
