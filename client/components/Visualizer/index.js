@@ -19,6 +19,7 @@ import Stars from 'components/Stars'
 import Icon from 'components/Icon'
 const PageModal = lazy(() => import('components/PageModal'))
 import { PRETTY_KNOWN_CONTRACTS, KNOWN_ADDRESSES } from '../../../shared/knownAddresses'
+import FloatingAd from './FloatingAd'  // Import the new FloatingAd component
 
 import './index.sass'
 
@@ -92,6 +93,7 @@ export default function Visualizer() {
     <Transactions currentBlockRef={currentBlockRef} soundOn={soundOn}
     />
     <div className="floating-button" onClick={handleSwitchToMainnet}>Switch to TESTNET</div>
+    <FloatingAd />  {/* Add the FloatingAd component here */}
   </div>
 }
 

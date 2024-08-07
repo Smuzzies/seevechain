@@ -65,9 +65,9 @@ const KNOWN_CONTRACTS = {
     short: 'VeBetterDAO',
     long: 'WP',
   },
-  '0xb6f43457600b1f3b7b98fc4394a9f1134ffc721d': {
+  '0xbfe2122a82c0aea091514f57c7713c3118101eda': {
     short: 'x2earn - Mugshot',
-    long: 'Mugshot',
+    long: 'Mugshot Daily',
   },
   '0xa58681692addd2e8e37f9113d40bb9253c03f65e': {
     short: 'x2earn - Cleanify',
@@ -89,9 +89,13 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - NFBC',
     long: 'NFBC L2E2',
   },
-  '0x7c2ea281ec4bcb32455035a67dc4f2f6dbcb213d': {
+  '0xcd093a08794dda7fbcc6d5839c85892f8da2e8be': {
     short: 'x2earn - NFBC',
     long: 'NFBC Airdrop',
+  },
+  '0x5b21c4fdcb62707c26e37ddf0297bd8b9c01636b': {
+    short: 'x2earn - NFBC',
+    long: 'NFBC Delegator',
   },
   '0x6ef42c8f4b99d483b1f37f9dfc55c854549ad122': {
     short: 'x2earn - Oily',
@@ -104,6 +108,10 @@ const KNOWN_CONTRACTS = {
   '0x642a263bee274109a2513f219e9dc975d64e4ebe': {
     short: 'x2earn - veDelegate',
     long: 'veDelegate',
+  },
+  '0x6e77705151726e9f500755b5bc1478fdd6fa94ae': {
+    short: 'BetterSwap',
+    long: 'BetterSwap',
   },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
