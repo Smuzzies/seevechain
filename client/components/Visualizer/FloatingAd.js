@@ -3,8 +3,8 @@ import betterswapImage from 'assets/betterswap.jpeg'
 
 const FloatingAd = () => {
   const [position, setPosition] = useState(() => ({
-    x: window.innerWidth - 170,
-    y: window.innerHeight / 2 - 100
+    x: window.innerWidth - 170, // 20px from right edge
+    y: window.innerHeight - 275 // 20px from bottom edge
   }));
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -32,39 +32,37 @@ const FloatingAd = () => {
     setIsDragging(false);
   };
 
-  // Mouse event handlers
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    handleStart(e.clientX, e.clientY);
-  };
-
-  // Touch event handlers
   const handleTouchStart = (e) => {
+    e.preventDefault(); // Prevent default touch behavior
     const touch = e.touches[0];
     handleStart(touch.clientX, touch.clientY);
   };
 
   const handleTouchMove = (e) => {
+    e.preventDefault(); // Prevent scrolling
     const touch = e.touches[0];
     handleMove(touch.clientX, touch.clientY);
   };
 
   useEffect(() => {
     const handleMouseMove = (e) => handleMove(e.clientX, e.clientY);
-    const handleTouchEnd = handleEnd;
+    const handleTouchEnd = (e) => {
+      e.preventDefault();
+      handleEnd();
+    };
 
     if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove);
-      document.addEventListener('mouseup', handleEnd);
-      document.addEventListener('touchmove', handleTouchMove, { passive: false });
-      document.addEventListener('touchend', handleTouchEnd);
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('mouseup', handleEnd);
+      window.addEventListener('touchmove', handleTouchMove, { passive: false });
+      window.addEventListener('touchend', handleTouchEnd);
     }
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleEnd);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleEnd);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [isDragging]);
 
@@ -80,7 +78,7 @@ const FloatingAd = () => {
         left: `${position.x}px`,
         top: `${position.y}px`,
         width: '150px',
-        height: '200px',
+        height: '175px',
         backgroundColor: 'white',
         border: '1px solid #ccc',
         borderRadius: '5px',
@@ -88,11 +86,15 @@ const FloatingAd = () => {
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        cursor: isDragging ? 'grabbing' : 'grab',
+        cursor: 'move',
         userSelect: 'none',
-        touchAction: 'none', // Prevents scrolling while dragging on touch devices
+        touchAction: 'none',
+
       }}
-      onMouseDown={handleMouseDown}
+      onMouseDown={(e) => {
+        e.preventDefault();
+        handleStart(e.clientX, e.clientY);
+      }}
       onTouchStart={handleTouchStart}
     >
       <div
@@ -112,14 +114,18 @@ const FloatingAd = () => {
             maxWidth: '100%', 
             maxHeight: '100%',
             pointerEvents: 'none',
+            userSelect: 'none',
           }} 
         />
       </div>
       <button
-        onClick={handleLaunch}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent dragging when clicking the button
+          handleLaunch();
+        }}
         style={{
           width: '100%',
-          height: '50px',
+          height: '25px',
           border: 'none',
           backgroundColor: '#2c9302',
           color: 'white',
