@@ -4,7 +4,7 @@ import betterswapImage from 'assets/betterswap.jpeg'
 const FloatingAd = () => {
   const [position, setPosition] = useState(() => ({
     x: window.innerWidth - 170, // 20px from right edge
-    y: window.innerHeight - 275 // 20px from bottom edge
+    y: window.innerHeight - 250 // 20px from bottom edge
   }));
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
