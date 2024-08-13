@@ -81,7 +81,7 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - Greencart',
     long: 'Greencart',
   },
-  '0x6754f3138bfe5b85c80eed802d6b888b4c92f7e5': {
+  '0xdB741C6927C92c4E3Fa9230d7bF915BBccAE2e4D': {
     short: 'x2earn - NFBC',
     long: 'NFBC L2E1',
   },
