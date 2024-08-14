@@ -3,20 +3,24 @@ import betterswapImage from 'assets/betterswap.jpeg'
 
 const FloatingAd = () => {
   const [position, setPosition] = useState(() => ({
-    x: window.innerWidth - 170, // 20px from right edge
-    y: window.innerHeight - 250 // 20px from bottom edge
+    x: window.innerWidth - 170,
+    y: window.innerHeight - 250
   }));
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const adRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   const handleStart = (clientX, clientY) => {
-    setIsDragging(true);
     const rect = adRef.current.getBoundingClientRect();
     setDragOffset({
       x: clientX - rect.left,
       y: clientY - rect.top,
     });
+
+    timeoutRef.current = setTimeout(() => {
+      setIsDragging(true);
+    }, 200); // Start dragging after 200ms of holding
   };
 
   const handleMove = (clientX, clientY) => {
@@ -29,46 +33,32 @@ const FloatingAd = () => {
   };
 
   const handleEnd = () => {
+    clearTimeout(timeoutRef.current);
     setIsDragging(false);
   };
 
-  const handleTouchStart = (e) => {
-    e.preventDefault(); // Prevent default touch behavior
-    const touch = e.touches[0];
-    handleStart(touch.clientX, touch.clientY);
-  };
-
-  const handleTouchMove = (e) => {
-    e.preventDefault(); // Prevent scrolling
-    const touch = e.touches[0];
-    handleMove(touch.clientX, touch.clientY);
+  const handleLinkClick = (e) => {
+    e.stopPropagation(); // Prevent the click from bubbling up to the parent div
+    window.open('https://swap.tbc.vet', '_blank', 'noopener,noreferrer');
   };
 
   useEffect(() => {
     const handleMouseMove = (e) => handleMove(e.clientX, e.clientY);
-    const handleTouchEnd = (e) => {
-      e.preventDefault();
-      handleEnd();
+    const handleTouchMove = (e) => {
+      const touch = e.touches[0];
+      handleMove(touch.clientX, touch.clientY);
     };
 
     if (isDragging) {
       window.addEventListener('mousemove', handleMouseMove);
-      window.addEventListener('mouseup', handleEnd);
       window.addEventListener('touchmove', handleTouchMove, { passive: false });
-      window.addEventListener('touchend', handleTouchEnd);
     }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mouseup', handleEnd);
       window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [isDragging]);
-
-  const handleLaunch = () => {
-    window.open('https://swap.tbc.vet', '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <div
@@ -78,7 +68,7 @@ const FloatingAd = () => {
         left: `${position.x}px`,
         top: `${position.y}px`,
         width: '150px',
-        height: '175px',
+        height: '190px',
         backgroundColor: 'white',
         border: '1px solid #ccc',
         borderRadius: '5px',
@@ -86,16 +76,21 @@ const FloatingAd = () => {
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        cursor: 'move',
+        cursor: isDragging ? 'grabbing' : 'grab',
         userSelect: 'none',
         touchAction: 'none',
-
+        zIndex: 9999,
       }}
       onMouseDown={(e) => {
         e.preventDefault();
         handleStart(e.clientX, e.clientY);
       }}
-      onTouchStart={handleTouchStart}
+      onTouchStart={(e) => {
+        const touch = e.touches[0];
+        handleStart(touch.clientX, touch.clientY);
+      }}
+      onMouseUp={handleEnd}
+      onTouchEnd={handleEnd}
     >
       <div
         style={{
@@ -118,23 +113,23 @@ const FloatingAd = () => {
           }} 
         />
       </div>
-      <button
-        onClick={(e) => {
-          e.stopPropagation(); // Prevent dragging when clicking the button
-          handleLaunch();
-        }}
+      <div
+        onClick={handleLinkClick}
         style={{
           width: '100%',
-          height: '25px',
+          height: '40px',
           border: 'none',
           backgroundColor: '#2c9302',
           color: 'white',
           fontSize: '12px',
           cursor: 'pointer',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        Launch BetterSwap
-      </button>
+        <center><b>Click here to Launch BetterSwap</b></center>
+      </div>
     </div>
   );
 };
