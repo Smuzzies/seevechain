@@ -81,11 +81,11 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - Greencart',
     long: 'Greencart',
   },
-  '0xeb881ee35da93050b928d743082ba4a8410076f3': {
+  '0xf742bf87b6eaebb5903579816989bfa4dfe00868': {
     short: 'x2earn - NFBC',
     long: 'NFBC L2E1',
   },
-  '0x40d5f3d98925c1798d778e838c01ad12f407f65d': {
+  '0x60cfa84106fc1648ce1a8966e40b6a8b5cb21ba2': {
     short: 'x2earn - NFBC',
     long: 'NFBC L2E2',
   },
@@ -797,6 +797,10 @@ const KNOWN_CONTRACTS = {
   '0x6e60fa61974c76001a0a8e6759f5348b7abcae2e': {
     short: 'Squad',
     long: 'Questing Shell Mates 2',
+  },
+  '0x350fde33d0a54046e1fc81e5b4a295f1c45066e1': {
+    short: 'Squad',
+    long: 'Questing Shell Mates Training',
   },
   '0x5a45edc6311017e6b12ebfb32c28a8d36ecf7686': 'Avery Dennison',
   '0xd948e6cf79ab34b716350db4aee33cf0031cf7a1': 'XGG Black Tea',

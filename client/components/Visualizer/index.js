@@ -20,6 +20,7 @@ import Icon from 'components/Icon'
 const PageModal = lazy(() => import('components/PageModal'))
 import { PRETTY_KNOWN_CONTRACTS, KNOWN_ADDRESSES } from '../../../shared/knownAddresses'
 import FloatingAd from './FloatingAd'  // Import the new FloatingAd component
+import SlidingIframe from './SlidingIframe'  // Adjust the path if necessary
 
 import './index.sass'
 
@@ -32,6 +33,11 @@ export default function Visualizer() {
   const currentBlockRef = useRef()
   const handleSwitchToMainnet = () => {
     window.location.href = 'https://testnet.myvechain.com';
+    // ... other state variables ...
+  const [iframeOpen, setIframeOpen] = useState(false);
+  const handleToggleIframe = () => {
+    setIframeOpen(prev => !prev);
+  };
   };
 
   useEffect(() => {
