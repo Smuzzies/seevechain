@@ -9,7 +9,8 @@ const FloatingAd = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const adRef = useRef(null);
-  const timeoutRef = useRef(null);
+  const dragStartTimeRef = useRef(null);
+  const hasDraggedRef = useRef(false);
 
   const handleStart = (clientX, clientY) => {
     const rect = adRef.current.getBoundingClientRect();
@@ -17,10 +18,9 @@ const FloatingAd = () => {
       x: clientX - rect.left,
       y: clientY - rect.top,
     });
-
-    timeoutRef.current = setTimeout(() => {
-      setIsDragging(true);
-    }, 200); // Start dragging after 200ms of holding
+    setIsDragging(true);
+    dragStartTimeRef.current = Date.now();
+    hasDraggedRef.current = false;
   };
 
   const handleMove = (clientX, clientY) => {
@@ -29,16 +29,19 @@ const FloatingAd = () => {
         x: clientX - dragOffset.x,
         y: clientY - dragOffset.y,
       });
+      hasDraggedRef.current = true;
     }
   };
 
   const handleEnd = () => {
-    clearTimeout(timeoutRef.current);
     setIsDragging(false);
+    const dragDuration = Date.now() - dragStartTimeRef.current;
+    if (dragDuration < 200 && !hasDraggedRef.current) {
+      handleLinkClick();
+    }
   };
 
-  const handleLinkClick = (e) => {
-    e.stopPropagation(); // Prevent the click from bubbling up to the parent div
+  const handleLinkClick = () => {
     window.open('https://swap.tbc.vet', '_blank', 'noopener,noreferrer');
   };
 
@@ -114,7 +117,10 @@ const FloatingAd = () => {
         />
       </div>
       <div
-        onClick={handleLinkClick}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleLinkClick();
+        }}
         style={{
           width: '100%',
           height: '40px',
