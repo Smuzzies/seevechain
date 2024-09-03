@@ -134,7 +134,7 @@ const FloatingAd = () => {
           alignItems: 'center',
         }}
       >
-        <center><b>Click here to Launch BetterSwap</b></center>
+        <center><b>Launch BetterSwap</b></center>
       </div>
     </div>
   );

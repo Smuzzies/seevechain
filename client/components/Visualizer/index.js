@@ -19,8 +19,8 @@ import Stars from 'components/Stars'
 import Icon from 'components/Icon'
 const PageModal = lazy(() => import('components/PageModal'))
 import { PRETTY_KNOWN_CONTRACTS, KNOWN_ADDRESSES } from '../../../shared/knownAddresses'
-import FloatingAd from './FloatingAd'  // Import the new FloatingAd component
-import SlidingIframe from './SlidingIframe'  // Adjust the path if necessary
+import FloatingAd from './FloatingAd'
+import SlidingIframe from './SlidingIframe'
 
 import './index.sass'
 
@@ -29,15 +29,15 @@ export default function Visualizer() {
   const [pageModalVisible, togglePageModalVisibility] = useState(false)
   const [soundOn, setSoundOn] = useState(false)
   const [loaded, setLoaded] = useState(false)
+  const [currentTime, setCurrentTime] = useState('')
   const initialized = useRef()
   const currentBlockRef = useRef()
   const handleSwitchToMainnet = () => {
     window.location.href = 'https://testnet.myvechain.com';
-    // ... other state variables ...
+  };
   const [iframeOpen, setIframeOpen] = useState(false);
   const handleToggleIframe = () => {
     setIframeOpen(prev => !prev);
-  };
   };
 
   useEffect(() => {
@@ -72,6 +72,13 @@ export default function Visualizer() {
     )
 
     if (allRoutes.includes(window.location.pathname)) togglePageModalVisibility(true)
+
+    // Add this new interval to update the current time every second
+    const timer = setInterval(() => {
+      setCurrentTime(moment().utc().format('YYYY-MM-DD HH:mm:ss UTC'))
+    }, 1000)
+
+    return () => clearInterval(timer)
   }, [])
 
   useWindowEventListener('popstate', () => {
@@ -92,13 +99,13 @@ export default function Visualizer() {
     }
     <Stars />
     <div className="Visualizer-rightControls">
+      <span className="Visualizer-time">{currentTime}</span>
       <Icon type={soundOn ? 'volume-up' : 'volume-off'} size="md" onClick={() => { setSoundOn(!soundOn) }} />
     </div>
     <BlockNumber />
     <BottomBar togglePageModalVisibility={togglePageModalVisibility} />
-    <Transactions currentBlockRef={currentBlockRef} soundOn={soundOn}
-    />
-    <FloatingAd />  {/* Add the FloatingAd component here */}
+    <Transactions currentBlockRef={currentBlockRef} soundOn={soundOn} />
+    <FloatingAd />
   </div>
 }
 

@@ -54,6 +54,9 @@ async function getTransaction(thor, txId, block, client) {
     if (!receipt || !transaction) {
       await getTransaction(thor, txId, block, client)
     } else {
+      if (receipt.reverted) {
+        return
+      }
       await commands.saveTransaction({ client, transaction, receipt, block, thor })
     }
   } catch(error) {
