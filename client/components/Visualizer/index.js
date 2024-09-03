@@ -98,7 +98,6 @@ export default function Visualizer() {
     <BottomBar togglePageModalVisibility={togglePageModalVisibility} />
     <Transactions currentBlockRef={currentBlockRef} soundOn={soundOn}
     />
-    <div className="floating-button" onClick={handleSwitchToMainnet}>Switch to TESTNET</div>
     <FloatingAd />  {/* Add the FloatingAd component here */}
   </div>
 }

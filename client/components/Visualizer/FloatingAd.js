@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import betterswapImage from 'assets/betterswap.jpeg'
+import betterswapImage from 'assets/betterswap.jpg'
 
 const FloatingAd = () => {
   const [position, setPosition] = useState(() => ({
