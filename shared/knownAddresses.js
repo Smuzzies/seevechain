@@ -109,9 +109,21 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - veDelegate',
     long: 'veDelegate',
   },
-  '0x6e77705151726e9f500755b5bc1478fdd6fa94ae': {
+  '0x51d6ebe9131880d9bb7a4259f692507d03583a0c': {
     short: 'BetterSwap',
-    long: 'BetterSwap',
+    long: 'BetterSwap Aggregator',
+  },
+  '0x349ede93b675c0f0f8d7cdad74ecf1419943e6ac': {
+    short: 'BetterSwap',
+    long: 'BetterSwap Router',
+  },
+  '0x5970dcbebac33e75eff315c675f1d2654f7bf1f5': {
+    short: 'BetterSwap',
+    long: 'BetterSwap Factory',
+  },
+  '0xf9b02b47694fd635a413f16dc7b38af06cc16fe5': {
+    short: 'BetterSwap',
+    long: 'BetterSwap VET (BVET)',
   },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
@@ -787,20 +799,24 @@ const KNOWN_CONTRACTS = {
     long: 'Dragon of Singapura Weapons NFT',
   },
   '0xe5a2d2811fe9fc91586af686f2e30a756d15e721': {
-    short: 'Squad',
+    short: 'Turtle Labs',
     long: 'Squad NFT Staking',
   },
   '0x98ec1e80031084eee055cb605c5b86eb87f60c71': {
-    short: 'Squad',
+    short: 'Turtle Labs',
     long: 'Questing Shell Mates 1',
   },
   '0x6e60fa61974c76001a0a8e6759f5348b7abcae2e': {
-    short: 'Squad',
+    short: 'Turtle Labs',
     long: 'Questing Shell Mates 2',
   },
   '0x350fde33d0a54046e1fc81e5b4a295f1c45066e1': {
-    short: 'Squad',
+    short: 'Turtle Labs',
     long: 'Questing Shell Mates Training',
+  },
+  '0xabc0e4f280f4d7e6e4461b0e3c791848b7d7c10a': {
+    short: 'Turtle Labs',
+    long: 'Recycler',
   },
   '0x5a45edc6311017e6b12ebfb32c28a8d36ecf7686': 'Avery Dennison',
   '0xd948e6cf79ab34b716350db4aee33cf0031cf7a1': 'XGG Black Tea',

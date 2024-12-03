@@ -35,7 +35,8 @@ import squadBanner from 'assets/squadbanner.png'
 import squadIcon from 'assets/squadlogo.png'
 import blackvBanner from 'assets/blackvbanner.png'
 import blackvIcon from 'assets/blackv.png'
-
+import betterswapBanner from 'assets/betterswap.png'
+import betterswapIcon from 'assets/betterswap.jpg'
 import './index.sass'
 
 export default function ContractGroupPage({}) {
@@ -60,8 +61,6 @@ export default function ContractGroupPage({}) {
     }} />
   </div>
 }
-
-// ... (rest of the code remains the same) ...
 
 const groupProfileProps = {
   'VIMworld': {
@@ -124,7 +123,7 @@ const groupProfileProps = {
     url: 'https://thegoldenempire.art/',
     bio: 'Play, quest, stake, and earn as you delve into the riches of the Golden Empire through stunning NFTs. Shape your journey, accumulate rewards, and become part of an evolving legacy. Join the Golden Empire, where history, innovation, and rewards unite in a golden fusion on the VeChain blockchain. Golden Empire offers an unparalleled NFT experience, blending historical intrigue with modern blockchain technology. It is an invitation to explore, learn, and grow within a community that values both past and future.',
   },
-  'Squad': {
+  'Turtle Labs': {
     banner: squadBanner,
     logo: squadIcon,
     url: 'https://squadvechain.art/',
@@ -135,6 +134,12 @@ const groupProfileProps = {
     logo: blackvIcon,
     url: 'https://squadvechain.art/',
     bio: 'Your premier destination for exclusive, premium-quality NFTs tailored for discerning collectors. Specializing in unique, high-end digital art and collectibles, BlackVeMarket offers an unparalleled shopping experience with curated NFT collections that emphasize sophistication and innovation. Whether you aree looking for rare digital art pieces, cutting-edge collectibles, or unique virtual assets.',
+  },
+  'BetterSwap': {
+    banner: betterswapBanner,
+    logo: betterswapIcon,
+    url: 'https://swap.tbc.vet/',
+    bio: 'BetterSwaps Pool2Earn initiative aims to establish a robust financial ecosystem for sustainable tokens on VeChain. Through our DEX Aggregator, users who allocate their B3TR tokens to our Liquidity Pool will receive rewards.',
   },
 }
 
