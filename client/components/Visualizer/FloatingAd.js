@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import betterswapImage from 'assets/betterswap.jpg'
+import betterswapImage from 'assets/bswapnew.png'
 
 const FloatingAd = () => {
   const [position, setPosition] = useState(() => ({
@@ -72,10 +72,9 @@ const FloatingAd = () => {
         top: `${position.y}px`,
         width: '150px',
         height: '190px',
-        backgroundColor: 'white',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+        backgroundColor: 'transparent',
+        border: '0px solid #ccc',
+        borderRadius: '15px',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
@@ -99,7 +98,7 @@ const FloatingAd = () => {
         style={{
           width: '150px',
           height: '150px',
-          backgroundColor: '#f0f0f0',
+          backgroundColor: 'transparent',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -125,7 +124,7 @@ const FloatingAd = () => {
           width: '100%',
           height: '40px',
           border: 'none',
-          backgroundColor: '#2c9302',
+          backgroundColor: '#270936',
           color: 'white',
           fontSize: '12px',
           cursor: 'pointer',

@@ -115,15 +115,15 @@ function Donate({ toggleDonate, donateRef, donateVisible }) {
     {donateVisible &&
       <div className="PageModal-donateWrapper">
         <div className="PageModal-address">
-          <input value="0x06c2524420741ff26E52a482d8B4c8532Bf03893" />
-          <CopyButton copyValue="0x06c2524420741ff26E52a482d8B4c8532Bf03893" />
+          <input value="0x9b1732D8b2E29397879483Bf9aD38EC75bBAEB20" />
+          <CopyButton copyValue="0x9b1732D8b2E29397879483Bf9aD38EC75bBAEB20" />
         </div>
         <div className="PageModal-currencyMessage">
           Send VET, VTHO, or any VIP180 token
         </div>
         <QRCode
           className="PageModal-qrCode"
-          value="0x06c2524420741ff26E52a482d8B4c8532Bf03893"
+          value="0x9b1732D8b2E29397879483Bf9aD38EC75bBAEB20"
           size={128}
           bgColor="#ffffff"
           fgColor="#182024"

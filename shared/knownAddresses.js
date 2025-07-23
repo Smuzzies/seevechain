@@ -69,6 +69,10 @@ const KNOWN_CONTRACTS = {
     short: 'x2earn - Mugshot',
     long: 'Mugshot Daily',
   },
+  '0x9a2e89296a47fefc5d3b88a9441a1586e2ef77c5': {
+    short: 'Thorhead Staking',
+    long: 'Thorhead Staking',
+  },
   '0xa58681692addd2e8e37f9113d40bb9253c03f65e': {
     short: 'x2earn - Cleanify',
     long: 'Cleanify Daily',
@@ -111,7 +115,11 @@ const KNOWN_CONTRACTS = {
   },
   '0x51d6ebe9131880d9bb7a4259f692507d03583a0c': {
     short: 'BetterSwap',
-    long: 'BetterSwap Aggregator',
+    long: 'BetterSwap Aggregator 1',
+  },
+  '0xf21dd7108d93af56fab07423efb90f4a3604da89': {
+    short: 'BetterSwap',
+    long: 'BetterSwap Aggregator 2',
   },
   '0x349ede93b675c0f0f8d7cdad74ecf1419943e6ac': {
     short: 'BetterSwap',
@@ -120,10 +128,6 @@ const KNOWN_CONTRACTS = {
   '0x5970dcbebac33e75eff315c675f1d2654f7bf1f5': {
     short: 'BetterSwap',
     long: 'BetterSwap Factory',
-  },
-  '0xf9b02b47694fd635a413f16dc7b38af06cc16fe5': {
-    short: 'BetterSwap',
-    long: 'BetterSwap VET (BVET)',
   },
   '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
     short: 'ToolChain Partners',
@@ -136,6 +140,14 @@ const KNOWN_CONTRACTS = {
   '0xf72614024c9273320b2f82dda3932785df6b9208': {
     short: 'ToolChain Partners',
     long: 'Aretaeio Hospital',
+  },
+  '0x058f7b7d96c8aebda31b9644e5012e33670cbad8': {
+    short: 'ToolChain Partners',
+    long: 'MuhdoHub Sandbox',
+  },
+  '0x54e0ecdb8c57ba8d770327b0cbfa4e8f8b330537': {
+    short: 'ToolChain Partners',
+    long: 'MuhdoHub Formal',
   },
   '0x54f14e2e4a204a8c1b734c1b73d6d7cb96894a61': {
     short: 'ToolChain Partners',
@@ -233,7 +245,7 @@ const KNOWN_CONTRACTS = {
     short: 'ToolChain Partners',
     long: 'Walmart China 2',
   },
-  '0x1Cc13a24b1F73288cc7791C2c8Fd428357405226': {
+  '0x1cc13a24b1f73288cc7791c2c8fd428357405226': {
     short: 'ToolChain Partners',
     long: 'MyCare',
   },
@@ -283,7 +295,7 @@ const KNOWN_CONTRACTS = {
     short: 'VeRocket',
     long: 'VeRocket Router',
   },
-  '0x7A3d485cC586d2c5543b0DF3B93043CFA8Aec6D6': {
+  '0x7a3d485cc586d2c5543b0df3b93043cfa8aec6d6': {
     short: 'VeRocket',
     long: 'VeRocket VeUSD',
   },
@@ -706,7 +718,7 @@ const KNOWN_CONTRACTS = {
     short: 'Dohrnii Staking',
     long: 'Dohrnii Staking (1yr)',
   },
-  '0xa2bae9d627A29aE6914c7D18afCcb27664d1b436': {
+  '0xa2bae9d627a29ae6914c7d18afccb27664d1b436': {
     short: 'Dohrnii Staking',
     long: 'Dohrnii Staking (3yr)',
   },
@@ -927,7 +939,7 @@ const KNOWN_CONTRACTS = {
     short: '3DAbles',
     long: '3DAbles: Pawn Shop',
   },
-  '0x512547eEb6ceBf76210eA1e23588084AD3312C6e': {
+  '0x512547eeb6cebf76210ea1e23588084ad3312c6e': {
     short: '3DAbles',
     long: '3DAbles: Tradables',
   },
@@ -1306,6 +1318,7 @@ const KNOWN_CONTRACTS = {
 }
     
 const TOKEN_CONTRACTS = {
+  '0xf9b02b47694fd635a413f16dc7b38af06cc16fe5': 'BetterSwap BVET',
   '0x8fcddbb322b18d8bdaec9243e9f4c6eb8901e566': '3DAbles Token',
   '0xb28a08d4e0fd0a7bdbe7461188f0ba5183f95298': 'Legacy Token',
   '0xa4f95b1f1c9f4cf984b0a003c4303e8ea86302f6': 'VFA Token',
@@ -1469,7 +1482,7 @@ async function getVetNameForAddress(address) {
       body: JSON.stringify({
         "clauses": [
           {
-            "to": "0xA11413086e163e41901bb81fdc5617c975Fa5a1A",
+            "to": "0xa11413086e163e41901bb81fdc5617c975fa5a1a",
             "abi": {
               "inputs": [
                 { "internalType": "address[]", "name": "addresses", "type": "address[]" }
