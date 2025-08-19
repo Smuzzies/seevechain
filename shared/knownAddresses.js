@@ -129,137 +129,85 @@ const KNOWN_CONTRACTS = {
     short: 'BetterSwap',
     long: 'BetterSwap Factory',
   },
-  '0xba6b65f7a48636b3e533205d9070598b4faf6a0c': {
-    short: 'ToolChain Partners',
-    long: 'DNV',
-  },  
-  '0x20eb29a2f76021c4cb5bbd4ee359a6172ee2e30a': {
-    short: 'ToolChain Partners',
-    long: 'Supply@Me',
-  },
-  '0xf72614024c9273320b2f82dda3932785df6b9208': {
-    short: 'ToolChain Partners',
-    long: 'Aretaeio Hospital',
-  },
-  '0x058f7b7d96c8aebda31b9644e5012e33670cbad8': {
-    short: 'ToolChain Partners',
-    long: 'MuhdoHub Sandbox',
-  },
   '0x54e0ecdb8c57ba8d770327b0cbfa4e8f8b330537': {
     short: 'ToolChain Partners',
     long: 'MuhdoHub Formal',
   },
-  '0x54f14e2e4a204a8c1b734c1b73d6d7cb96894a61': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_1',
-  },
-  '0x91ace4b91fc65ee930724deb580dfe80c135713e': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_2',
-  },
   '0xc3c118c6fa5479244b9f0da0b0ba8f9afa8dc33c': {
     short: 'ToolChain Partners',
-    long: 'Undisclosed_3',
-  },
-  '0xeddc51042586b66cf8fb75e971636c76ce2e9c35': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_4',
+    long: 'ToolChain 1',
   },
   '0x7995bdbc94ab8bd33f77457416214a4abe0b8631': {
     short: 'ToolChain Partners',
-    long: 'Undisclosed_5',
+    long: 'ToolChain 2',
   },
   '0xd9a43482cb6af1b7236cde4f7ec3201ac2a13d79': {
     short: 'ToolChain Partners',
-    long: 'Undisclosed_6',
-  },
-  '0xf41aab18649523a18de81042bd30da07b37b1ec1': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_7',
-  },
-  '0x11d27c2307c108990d3874b5b3dac3209bc7eee4': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_8',
-  },
-  '0x96fa20b2162cae29b3ccb7984d3b23459200722a': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_9',
-  },
-  '0x7977f06e9f1d7f5bf0d73cd8de24bd16ddea2cf2': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_10',
-  },
-  '0x0eca11f7035fb0cdfa059796add7f6552560b968': {
-    short: 'ToolChain Partners',
-    long: 'YONEX',
-  },
-  '0xe5e83b13c4b4042bae5809b1c5d1bed4bb3836dc': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_12',
-  },
-  '0x65e8d64bcb5b5e235626958ed116d4a9d7aea081': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_13',
-  },
-  '0x8f23de2ad8d4fc4955539fd6cd160eb25946237e': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_14',
+    long: 'ToolChain 3',
   },
   '0xcf4645cc606c48bfe63a3b4987628f1b2760db08': {
     short: 'ToolChain Partners',
-    long: 'Undisclosed_15',
+    long: 'ToolChain 4',
+  },
+  '0x2fd6ae989fc221b9e465c6640f0a8da630ec1cfa': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 5',
+  },
+  '0x84f17c163dbee855a199d92b499d0635205c454d': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 6',
+  },
+  '0x38ba53f9e4b5be0c422d3f00415139e52d46e90d': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 7',
+  },
+  '0xcc508c9a8c70619d0a85cf0dc873d8ea09606f8d': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 8',
+  },
+  '0xd8877069062da263733ab66a2ac54f5f790c9884': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 9',
+  },
+  '0xc212909e23b798229743e5a35f273d2abf1368dc': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 10',
+  },
+  '0x9fc332bd9c8490a689d135ab4e16d18541306d0e': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 11',
+  },
+  '0xd2a41323d96e493e6aded9c227a439f2b32239a1': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 12',
+  },
+  '0x17f4e78d431bf660aaf4d4bd727ebffd4a548251': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 13',
+  },
+  '0x43ea0ec85aa6f61a91c82de3676197ebfec45bcd': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 14',
+  },
+  '0x9aeedeb84cf0a44b2f87a36c0f455ad4b2029c01': {
+    short: 'ToolChain Partners',
+    long: 'ToolChain 15',
   },
   '0x9398648b907399bd0fcb5a8d0822e8daa66378ef': {
     short: 'ToolChain Partners',
     long: 'Yongpu Coffee',
   },
-  '0xea665486ba7d2d1904e9ea8694860e825d4beaf0': {
-    short: 'ToolChain Partners',
-    long: 'Undisclosed_17',
-  },
-  '0xfee823ac958e34973d124218f8ddbe65a651a08b': {
-    short: 'ToolChain Partners',
-    long: 'NSF International',
-  },
-  '0x66f36d228a5201419dff9895dcfb8bf45c3cf262': {
-    short: 'ToolChain Partners',
-    long: 'San Marino Green Pass NFT',
-  },
   '0xdcaa96e264eb8514b130e1a97072b41c875bec7b': {
     short: 'ToolChain Partners',
     long: 'San Marino Green Pass Data Upload',
-  },
-  '0x8e1bf526c0e40e8abe6a34129a1f68c2d489ac96': {
-    short: 'ToolChain Partners',
-    long: 'Inner Mongolia Traceability Platform',
-  },
-  '0xecc159751f9aed21399d5e3ce72bc9d4fccb9ccc': {
-    short: 'ToolChain Partners',
-    long: 'MyStory',
   },
   '0xbe7a61b0405fdfbaae28c1355cd53c8affc1c4b0': {
     short: 'ToolChain Partners',
     long: 'Walmart China',
   },
-  '0x1a2f8fc8e821f46d6962bb0a4e06349a3ad4cf33': {
-    short: 'ToolChain Partners',
-    long: 'Walmart China 2',
-  },
   '0x1cc13a24b1f73288cc7791c2c8fd428357405226': {
     short: 'ToolChain Partners',
     long: 'MyCare',
-  },
-  '0x1a048cff120f3ebff9bb66459effa34445c8e87e': {
-    short: 'ToolChain Partners',
-    long: 'KnowSeafood',
-  },
-  '0xa9f3c1bd52c3a506cecbb8cbca562ef26c833175': {
-    short: 'ToolChain Partners',
-    long: 'Yuhongtai Foods',
-  },
-  '0x505b95e128e403634fe6090472485341905fc0f9': {
-    short: 'ToolChain Partners',
-    long: 'Yunnan Pu`er Tea',
   },
   '0xbb763cea82127548c465f6ad83a297f292e5c2fb': 'Reebonz',
   '0xfbc5c4e371164e3f1dc5d1760a98f3d227ba7e3b': {
